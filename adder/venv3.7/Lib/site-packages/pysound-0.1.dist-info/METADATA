@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: pysound
+Version: 0.1
+Summary: Sound and music synthesiser
+Home-page: https://github.com/martinmcbride/pysound
+Author: Martin McBride
+Author-email: mcbride.martin@gmail.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+
+# PySound
+
+A Python library for creating digital sound and music.
+
+[Main website](http://www.martinmcbride.org/pysound_tutorial)
+
+

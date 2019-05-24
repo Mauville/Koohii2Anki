@@ -1,0 +1,132 @@
+<html class=" webkit safari win js">
+<head>
+<style>
+button {
+font-weight: normal;
+}
+
+hr { background-color:#ccc; margin: 1em; }
+body { margin:1.5em; }
+img { max-width: 95%; max-height: 95%; }
+.marked { position:fixed; right: 7px; top: 7px; display: none; }
+#typeans { width: 100%; }
+.typeGood { background: #0f0; }
+.typeBad { background: #f00; }
+.typeMissed { background: #ccc; }
+</style>
+</head>
+<body class="card card1">
+<img src="qrc:/icons/rating.png" id="star" class="marked" draggable="false" style="display: none; ">
+<div id="qa"><style> /* http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126 License: none (public domain) */ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; } /* HTML5 display-role reset for older browsers */ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; } body { line-height: 1; } ol, ul { list-style: none; } blockquote, q { quotes: none; } blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; } table { border-collapse: collapse; border-spacing: 0; }
+
+
+
+div.front, div.back {
+	text-align: center;
+	font-family: sans-serif;
+	font-size: 16px; /* line height is based on this size in Anki for some reason, so start with the smallest size used */
+}
+
+
+body{
+    background-color: #c1e4fd;
+}
+.keyword{
+    background-color: #ccc;
+    width: 128vw;
+    height: 112vh;
+    line-height: 112vh;
+    margin: .3vh auto .3vh auto;
+    text-align: center;
+}
+.keyword a:link
+{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 6vh;
+    color: #005cb1;
+}
+.keyword a:visited
+{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 6vh;
+    color: #005cb1;
+}
+.keyword a:hover
+{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 6vh;
+    color: #005cb1;
+}
+.keyword a:active
+{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 6vh;
+    color: #005cb1;
+}
+.bottom-line{
+    color: #408fc6;
+    font-family: Arial,sans-serif;
+    margin: 0;
+    padding: 0 0 5px;
+    text-align: center;
+    font-size: 4vh;
+}
+
+
+.win .japanese {font-family: "Meiryo", "MS Mincho";}
+.mac .japanese {font-family: "Hiragino Mincho Pro";}
+.linux .japanese {font-family: "Kochi Mincho";}
+.mobile .japanese {font-family: "Motoya L Cedar", "Motoya L Maru", "DroidSansJapanese", "Hiragino Mincho ProN";}
+</style><div class="front">
+	<div class="keyword" "="">
+		<a href="http://jisho.org/kanji/details/攻">aggression</a>
+		 <div class="bottom-line">Touch to flip the card</div>
+	</div>
+</div></div>
+<script>
+var ankiPlatform = "desktop";
+var typeans;
+function _updateQA (q, answerMode, klass) {
+    $("#qa").html(q);
+    typeans = document.getElementById("typeans");
+    if (typeans) {
+        typeans.focus();
+    }
+    if (answerMode) {
+        var e = $("#answer");
+        if (e[0]) { e[0].scrollIntoView(); }
+    } else {
+        window.scrollTo(0, 0);
+    }
+    if (klass) {
+        document.body.className = klass;
+    }
+    // don't allow drags of images, which cause them to be deleted
+    $("img").attr("draggable", false);
+};
+
+function _toggleStar (show) {
+    if (show) {
+        $(".marked").show();
+    } else {
+        $(".marked").hide();
+    }
+}
+
+function _getTypedText () {
+    if (typeans) {
+        py.link("typeans:"+typeans.value);
+    }
+};
+function _typeAnsPress() {
+    if (window.event.keyCode === 13) {
+        py.link("ansHack");
+    }
+}
+</script>
+</body>
+</html>

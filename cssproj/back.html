@@ -1,0 +1,137 @@
+<html class="mobile android linux js">
+
+<head>
+    <title>AnkiDroid Flashcard</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="android_asset/flashcard.css">
+    <link rel="stylesheet" type="text/css" href="android_asset/chess.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @font-face {
+            font-family: "OpenSans";
+            font-weight: bolder;
+            font-style: normal;
+            src: url("android_asset/fonts/OpenSans-Bold.ttf");
+        }
+
+        @font-face {
+            font-family: "OpenSans";
+            font-weight: lighter;
+            font-style: italic;
+            src: url("android_asset/fonts/OpenSans-LightItalic.ttf");
+        }
+
+        @font-face {
+            font-family: "OpenSans";
+            font-weight: lighter;
+            font-style: normal;
+            src: url("android_asset/fonts/OpenSans-Light.ttf");
+        }
+
+        @font-face {
+            font-family: "OpenSans";
+            font-weight: normal;
+            font-style: italic;
+            src: url("android_asset/fonts/OpenSans-Italic.ttf");
+        }
+
+        @font-face {
+            font-family: "OpenSans-Regular";
+            font-weight: normal;
+            font-style: normal;
+            src: url("android_asset/fonts/OpenSans-Regular.ttf");
+        }
+
+        @font-face {
+            font-family: "OpenSans";
+            font-weight: bolder;
+            font-style: italic;
+            src: url("android_asset/fonts/OpenSans-BoldItalic.ttf");
+        }
+
+        @font-face {
+            font-family: "OpenSans";
+            font-weight: bolder;
+            font-style: normal;
+            font-stretch: condensed;
+            src: url("android_asset/fonts/OpenSans-CondensedBold.ttf");
+        }
+
+        BODY {
+            font-family: 'OpenSans';
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+        }
+
+        body {
+            zoom: 0.7
+        }
+
+        img {
+            zoom: 0.8
+        }
+    </style>
+    <script src="android_asset/scripts/card.js" type="text/javascript"> </script>
+</head>
+
+<body class="card card1 vertically_centered night_mode chrome">
+    <div id="content">
+        <div class="answer id=" qa"="">
+            <!-- Editable code -->
+            <div class="back">
+                <div class="innerCard">
+                    <a href="http://jisho.org/kanji/details/敏" id="keyword">cleverness</a>
+                    <div id="kanji" class="KanjiCont">敏</div>
+                    <ul id="bottombar">
+                        <li>画数 10</li>
+                        <!-- TODO: add support for other frame numbers through commented lines -->
+                        <li>498</li>
+                    </ul>
+                </div>
+                <div id="buttonbar">
+                    <div class="details">Story</div>
+                    <div class="details">Details</div>
+                    <div class="details">Dict</div>
+                    <div id="strokes" class="debug">
+                        <img src="E6958F.png">
+                    </div>
+
+                </div>
+                <!--&mdash; &nbsp; Jouyou Grade: JH &nbsp; JLPT: 1-->
+                <div class="debug" id="storybox">
+                    <p id="primitives">
+                        Primitives: cleverness, every, reclining, lying down, mother, breasts, taskmaster
+                    </p>
+                    <p class="story" id="heisig1"> Behind <i>every</i> successful <i>taskmaster</i>, the
+                        <b>cleverness</b> of a fox
+                        to outwit his
+                        charges. </p>
+                    <p class="story" id="koohii1">Every master(or taskmaster) must have some degree of cleverness.</p>
+                    <p class="story" id="koohii2">This is another example of a koohii story. It has to have some degree
+                        on length to illustrate overflows and such.</p>
+                </div>
+
+                <div id="detailbox">
+                    <p class="pronunciation" id="on">Onyomi: ビン</p>
+                    <p class="pronunciation" id="kun">Kunyomi: さとい</p>
+                    <!-- lesson no
+                heisig comment
+                Jouyou
+                JLPT
+                on
+                    reading examples
+                kun -->
+                </div>
+                <div id="dictbox">
+                    words
+
+                </div>
+            </div>
+
+        </div>
+        <!-- Editable code -->
+    </div>
+</body>
+
+</html>
