@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="android_asset/flashcard.css">
     <link rel="stylesheet" type="text/css" href="android_asset/chess.css">
-    <link rel="stylesheet" href="styles.css">
     <style>
         @font-face {
             font-family: "OpenSans";
@@ -72,6 +71,7 @@
             zoom: 0.8
         }
     </style>
+    <link rel="stylesheet" href="styles.css">
     <script src="android_asset/scripts/card.js" type="text/javascript"> </script>
 </head>
 
@@ -80,16 +80,19 @@
         <div class="answer id=" qa"="">
             <!-- Editable code -->
             <div class="back">
+
                 <div class="innerCard">
                     <a href="http://jisho.org/kanji/details/敏" id="keyword">cleverness</a>
                     <div id="kanji" class="KanjiCont">敏</div>
                     <ul id="bottombar">
-                        <li>画数 10</li>
+                        <li id="strokenum">画数<span id="num">10</span></li>
+                        <li id="framenum">498</li>
                         <!-- TODO: add support for other frame numbers through commented lines -->
-                        <li>498</li>
                     </ul>
                 </div>
-                <div id="buttonbar">
+
+                <div class="debug"">
+                <div id=" buttonbar">
                     <div class="details">Story</div>
                     <div class="details">Details</div>
                     <div class="details">Dict</div>
@@ -98,8 +101,8 @@
                     </div>
 
                 </div>
-                <!--&mdash; &nbsp; Jouyou Grade: JH &nbsp; JLPT: 1-->
                 <div class="debug" id="storybox">
+
                     <p id="primitives">
                         Primitives: cleverness, every, reclining, lying down, mother, breasts, taskmaster
                     </p>
@@ -115,22 +118,20 @@
                 <div id="detailbox">
                     <p class="pronunciation" id="on">Onyomi: ビン</p>
                     <p class="pronunciation" id="kun">Kunyomi: さとい</p>
-                    <!-- lesson no
-                heisig comment
-                Jouyou
-                JLPT
-                on
-                    reading examples
-                kun -->
+                    <p class="details" id="lesson">15</p>
+                    <p class="details" id="Jouyou">JH</p>
+                    <p class="details" id="JLPT">N0</p>
+                    <p class="details" id="readexams">lore irfj jfkd jfklds jfklds fjdlks jfdlks jflkds jflks</p>
                 </div>
-                <div id="dictbox">
-                    words
 
+                <div id="dictbox">
+                    <p>words</p>
                 </div>
             </div>
-
         </div>
-        <!-- Editable code -->
+
+    </div>
+    <!-- Editable code -->
     </div>
 </body>
 
