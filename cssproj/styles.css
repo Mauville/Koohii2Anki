@@ -1,65 +1,64 @@
                 /* http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126 License: none (public domain) */ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; } /* HTML5 display-role reset for older browsers */ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; } body { line-height: 1; } ol, ul { list-style: none; } blockquote, q { quotes: none; } blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; } table { border-collapse: collapse; border-spacing: 0; }
 
-                .root{
-                    --background: #1a1a1a;
-                    --background-night: #1a1a1a;
-                    --card-background: #262626;
-                    --main-text: #ffffff;
-                    --faded-text: #999999;
-                }
+
+                /* change body em to adjust to phone size */
+                /* change #num rem to adjust size */
 
                 body {
-                    background-color: var(--background);
+                    background-color: #1a1a1a;
+                    font-size: .45em;
                     font-family: Arial, Helvetica, sans-serif;
-                    font-size: 1em;
-                    color: var(--main-text);
+                    color: white;
                 }
 
                 body.night_mode {
-                    background-color: var(--background-night);
+                    background-color: #1a1a1a;
                 }
 
                 .innerCard {
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
-
                     position: absolute;
-                    background-color: var(--card-background);
+                    background-color: #262626;
+                    /* background-color: dodgerblue; */
                     top: 3em;
                     left: 50%;
                     transform: translateX(-50%);
                     width: 87%;
-                    height: 86%;
+                    height: 84%;
                     margin: 0 auto;
-                    padding: 3em 2.6em;
+                    padding: 2.3em 2.6em 3.5em 2.7em;
                 }
 
                 #keyword{
                     text-decoration: none;
+                    color: white;
                     font-size: 4.8em;
                 }
                 #kanji {
                     /* margin-top: 50vh; */
                     font-size: 40em;  
-                    font-family: 'Times New Roman', Times, serif;
+                    font-family: 'Times New Roman', Times, serif !important;
                     align-self: center;
                 }
 
                 .bottom-line {
-                    color: var(--faded-text);
+                    color: #999999;
                     margin: 0;
                     padding-top: 20px;
                     text-align: center;
                     font-size: 2.7vh;
                 }
                 #bottombar li {
+                    color: #999999;
                     display: inline;
                     font-size: 3.5em;
                 }
 
                 #bottombar li #num{
-                    font-size: 2rem;
+                    font-size: .7em;
+
                 }
 
                 #bottombar li:nth-child(1) {
@@ -68,8 +67,6 @@
                 #bottombar li:nth-child(2) {
                     float: right;
                 }
-
-                /*BACK OF CARD*/
 
 
                 .debug {
