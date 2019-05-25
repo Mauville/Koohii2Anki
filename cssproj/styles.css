@@ -65,11 +65,11 @@
                     justify-content: space-between;
                     position: absolute;
                     background-color: #262626;
-                    top: 3em;
+                    bottom: 3em;
                     left: 50%;
                     transform: translateX(-50%);
                     width: 87%;
-                    height: 84%;
+                    height: 86%;
                     margin: 0 auto;
                     padding: 2.3em 2.6em 3.5em 2.7em;
                 }
@@ -121,29 +121,28 @@
                     text-align: center;
                     justify-content: space-between;
                     position: absolute;
-                    bottom: 1px;
-                    width: 85%;
+                    top: 0;
+                    width: 100%;
                     left: 50%;
                     transform: translateX(-50%);
-                    bottom: 1em;
                 }
 
                 #buttonbar li {
-                    font-size: .9em;
-                    border-radius: 6%;
+                    font-size: .92em;
                     /* box-sizing: border-box; */
-                    width: 20%;
-                    padding: .85em 1em 1em 1em;
+                    width: 100%;
+                    padding: .87em 1em;
+                    border: solid 1px whitesmoke;
                 }
 
                 #details{
-                    background-color: #9C27B0;
+                    color: #ff99ff;
                 }
                 #story{
-                    background-color: #E91E63;
+                    color: #FFEE58;
                 }
                 #Dict{
-                    background-color: #00BCD4;
+                    color: #00BCD4;
                 }
 
 
