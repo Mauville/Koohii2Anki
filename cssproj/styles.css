@@ -125,6 +125,7 @@
                     width: 100%;
                     left: 50%;
                     transform: translateX(-50%);
+                    z-index: 999;
                 }
 
                 #buttonbar li {
@@ -135,16 +136,52 @@
                     border: solid 1px whitesmoke;
                 }
 
-                #details{
+                #details {
                     color: #ff99ff;
                 }
-                #story{
+
+                #story {
                     color: #FFEE58;
                 }
-                #Dict{
+
+                #Dict {
                     color: #00BCD4;
                 }
 
+                /* #fader { } */
+
+                #detailbox {
+                    font-size: 4.1em;
+                    text-align: left;
+                    width: 87%;
+                }
+
+                .box {
+                    font-size: 4.5em;
+                    width: 81%;
+                    margin: 0 auto;
+                    background-color: #262626;
+                    padding: 1em 1.2em;
+                    border-radius: 15px;
+                    max-height: 40%;
+                }
+
+                #detailbox td {
+                    padding: .8em 0.9em;
+                }
+
+                #detailbox .lead {
+                    color: #999999;
+                }
+
+                #dictbox {
+                    line-height: 1.7;
+                    overflow: auto;
+                }
+                #storybox{
+                    max-height: unset;
+
+                }
 
                 .debug {
                     display: none;

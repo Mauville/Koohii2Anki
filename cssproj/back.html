@@ -80,30 +80,9 @@
         <div class="answer id=" qa"="">
             <!-- Editable code -->
             <div class="back">
+                <!-- <div id="fader"></div> -->
 
-                <!-- Main Card -->
-                <div class="innerCard">
-                    <a href="http://jisho.org/kanji/details/敏" id="keyword">cleverness</a>
-                    <div id="kanji" class="KanjiCont">敏</div>
-                    <ul id="bottombar">
-                        <li id="strokenum">画数<span id="num">10</span></li>
-                        <li id="framenum">498</li>
-                        <!-- TODO: add support for other frame numbers through commented lines -->
-                    </ul>
-                </div>
-
-                    <!-- Button Bar -->
-                <ul id="buttonbar">
-                    <li id="details">Details</li>
-                    <li id="story">Story</li>
-                    <li id="dict">Dictionary</li>
-                </ul>
-
-                <div class="debug"">
-                <div id="strokes" class="debug"> <img src="E6958F.png"> </div>
-
-                <div class="debug" id="storybox">
-
+                <div id="storybox"class="box">
                     <p id="primitives">
                         Primitives: cleverness, every, reclining, lying down, mother, breasts, taskmaster
                     </p>
@@ -116,18 +95,84 @@
                         on length to illustrate overflows and such.</p>
                 </div>
 
-                <div id="detailbox">
-                    <p class="pronunciation" id="on">Onyomi: ビン</p>
-                    <p class="pronunciation" id="kun">Kunyomi: さとい</p>
-                    <p class="details" id="lesson">15</p>
-                    <p class="details" id="Jouyou">JH</p>
-                    <p class="details" id="JLPT">N0</p>
-                    <p class="details" id="readexams">lore irfj jfkd jfklds jfklds fjdlks jfdlks jflkds jflks</p>
+                <!-- Main Card -->
+                <div class="debug">
+                    <div class="innerCard">
+                        <a href="http://jisho.org/kanji/details/敏" id="keyword">cleverness</a>
+                        <div id="kanji" class="KanjiCont">敏</div>
+                        <ul id="bottombar">
+                            <li id="strokenum">画数<span id="num">10</span></li>
+                            <li id="framenum">498</li>
+                            <!-- TODO: add support for other frame numbers through commented lines -->
+                        </ul>
+                    </div>
                 </div>
 
-                <div id="dictbox">
-                    <p>words</p>
+                <!-- Button Bar -->
+                <ul id="buttonbar">
+                    <li id="details">Details</li>
+                    <li id="story">Story</li>
+                    <li id="dict">Dictionary</li>
+                </ul>
+
+
+                <div class="debug"">
+
+                <!-- Dictionary Box -->
+                <div id=" dictbox" class="box">
+                    <p>
+                        毎(ごと): each respectively
+                        <br>
+                        毎度(まいど): each time, common service-sector greeting
+                        <br>
+                        毎朝(まいあさ): every morning
+                        <br>
+                        毎月(まいげつ): every month, each month, monthly
+                        <br>
+                        毎週(まいしゅう): every week
+                        <br>
+                        毎日(まいにち): every day
+                        <br>
+                        毎晩(まいばん): every night
+                        <br>
+
+                    </p>
                 </div>
+
+                <img id="strokes" class="debug" src="E6958F.png">
+
+                <!-- Detail Box -->
+                <table id="detailbox" class="box">
+                    <tr>
+                        <td class="lead">Kun:</td>
+                        <td>{{kunYomi}}ビン</td>
+                    </tr>
+                    <tr>
+                        <td class="lead" id="lead">On:</td>
+                        <td>{{onYomi}}さとい</td>
+                    </tr>
+                    <tr>
+                        <td class="lead">Lesson:</td>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <td class="lead">Jouyou:</td>
+                        <td>Names</td>
+                    </tr>
+                    <tr>
+                        <td class="lead">JLPT:</td>
+                        <td>N0</td>
+                    </tr>
+                    <tr>
+                        <td class="lead">Compounds:</td>
+                        <td>
+                            <p class="details" id="readexams"> 一度 (いちど), 一座 (いちざ), 第一 (だいいち), 一 (ひと), 一つ (ひと.つ) </p>
+                        </td>
+                    </tr>
+                </table>
+
+
+
             </div>
         </div>
 
