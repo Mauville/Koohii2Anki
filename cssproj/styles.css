@@ -151,7 +151,7 @@
                 /* #fader { } */
 
                 #detailbox {
-                    font-size: 4.1em;
+                    font-size: 4.0em;
                     text-align: left;
                     width: 87%;
                 }
@@ -176,8 +176,9 @@
                 }
 
                 #dictbox {
-                    line-height: 1.7;
+                    line-height: 1.75;
                     overflow: auto;
+                    font-size: 3.8em;
                 }
 
                 #storybox {
@@ -227,7 +228,13 @@
                     font-size: .7em;
                 }
 
-                .debug {
+                .toggled{
+                   background-color: #262626 !important;
+                   border-top: none !important;
+                   border-bottom: none !important;
+                }
+
+                .debug, #dictbox, #storybox{
                     display: none;
                 }
 

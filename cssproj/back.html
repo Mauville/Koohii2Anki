@@ -77,9 +77,23 @@
     <script>
         $(document).ready(function () {
             console.log("ready!");
-            $("#details").on("click", function () {
-                console.log("click");
+            $("#dict").on("click", function () {
+                $(".box:not(#dictbox)").hide();
+                $(".toggled:not(#dict)").removeClass("toggled");
+                $(this).toggleClass("toggled")
                 $("#dictbox").toggle();
+            });
+            $("#story").on("click", function () {
+                $(".box:not(#storybox)").hide();
+                $(".toggled:not(#story)").removeClass("toggled");
+                $(this).toggleClass("toggled")
+                $("#storybox").toggle();
+            });
+            $("#details").on("click", function () {
+                $(".box:not(#detailbox)").hide();
+                $(".toggled:not(#details)").removeClass("toggled");
+                $(this).toggleClass("toggled")
+                $("#detailbox").toggle();
             });
         });
     </script>
@@ -99,9 +113,10 @@
                     <li id="dict">Dictionary</li>
                 </ul>
 
+                fix the weird kanji
                 <!-- storybox -->
                 <div id="storybox" class="box">
-                    <a href="http://jisho.org/kanji/details/敏" id="keyword"><span>敏</span>cleverness</a>
+                    <a href="http://jisho.org/kanji/details/敏" id="keyword"><span>敏</span> cleverness</a>
                     <div class="story" id="heisig1">
                         <!-- make allof the stories confitionsl if the field exists in anki -->
                         <p id="header">Heisig's</p>
@@ -118,17 +133,71 @@
                     </div>
                     <div class="story" id="koohii2">
                         <p id="header">Koohii #2</p>
-                        <p>This is another example of a koohii story. It has to have some degree on length tollllllllllllll
+                        <p>This is another example of a koohii story. It has to have some degree on length
+                            tollllllllllllll
                             illustrate overflows and such.
                         </p>
                     </div>
                     <div id="primitives">
                         <details>
                             <summary>Primitives</summary>
-                            <p>cleverness, every, reclining, lying down, mother, breasts, taskmaster</p> 
+                            <p>cleverness, every, reclining, lying down, mother, breasts, taskmaster</p>
                         </details>
                     </div>
                 </div>
+                <!-- Dictionary Box -->
+                <div id="dictbox" class="box">
+
+                    <p>
+                        毎(ごと): each respectively
+                        <br>
+                        毎度(まいど): each time, common service-sector greeting
+                        <br>
+                        毎朝(まいあさ): every morning
+                        <br>
+                        毎月(まいげつ): every month, each month, monthly
+                        <br>
+                        毎週(まいしゅう): every week
+                        <br>
+                        毎日(まいにち): every day
+                        <br>
+                        毎晩(まいばん): every night
+                        <br>
+
+                    </p>
+                </div>
+                TODO fix this with overflows, paddings ans shit
+                <!-- Detail Box -->
+                <table id="detailbox" class="box">
+                    <tr>
+                        <td class="lead">Kun:</td>
+                        <td>{{kunYomi}} ビンビンビンビン ビン ビン ビン ビン ビン </td>
+                    </tr>
+                    <tr>
+                        <td class="lead" id="lead">On:</td>
+                        <td>{{onYomi}}さとい</td>
+                    </tr>
+                    <tr>
+                        <td class="lead">Lesson:</td>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <td class="lead">Jouyou:</td>
+                        <td>Names</td>
+                    </tr>
+                    <tr>
+                        <td class="lead">JLPT:</td>
+                        <td>N0</td>
+                    </tr>
+                    <tr>
+                        <td class="lead">Cpds:</td>
+                        <td>
+                            <p class="details" id="readexams"> 一度 (いちど), 一座 (いちざ), 第一 (だいいち), 一 (ひと), 一つ (ひと.つ) </p>
+                        </td>
+                    </tr>
+                </table>
+
+
                 <!-- ************************* -->
                 <!-- DONOTSHOW -->
                 <!-- ************************* -->
@@ -147,60 +216,10 @@
                 </div>
             </div>
 
-            <!-- Dictionary Box -->
-            <div id="dictbox" class="box">
-
-                <p>
-                    毎(ごと): each respectively
-                    <br>
-                    毎度(まいど): each time, common service-sector greeting
-                    <br>
-                    毎朝(まいあさ): every morning
-                    <br>
-                    毎月(まいげつ): every month, each month, monthly
-                    <br>
-                    毎週(まいしゅう): every week
-                    <br>
-                    毎日(まいにち): every day
-                    <br>
-                    毎晩(まいばん): every night
-                    <br>
-
-                </p>
-            </div>
 
             <!-- Strokes -->
             <img id="strokes" class="debug" src="E6958F.png">
 
-            <!-- Detail Box -->
-            <table id="detailbox" class="box">
-                <tr>
-                    <td class="lead">Kun:</td>
-                    <td>{{kunYomi}}ビン</td>
-                </tr>
-                <tr>
-                    <td class="lead" id="lead">On:</td>
-                    <td>{{onYomi}}さとい</td>
-                </tr>
-                <tr>
-                    <td class="lead">Lesson:</td>
-                    <td>50</td>
-                </tr>
-                <tr>
-                    <td class="lead">Jouyou:</td>
-                    <td>Names</td>
-                </tr>
-                <tr>
-                    <td class="lead">JLPT:</td>
-                    <td>N0</td>
-                </tr>
-                <tr>
-                    <td class="lead">Cpds:</td>
-                    <td>
-                        <p class="details" id="readexams"> 一度 (いちど), 一座 (いちざ), 第一 (だいいち), 一 (ひと), 一つ (ひと.つ) </p>
-                    </td>
-                </tr>
-            </table>
 
 
         </div>
