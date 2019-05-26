@@ -194,7 +194,8 @@
                     font-size: .9em;
                     border-top: #999999 .5px solid;
                     border-bottom: #999999 .5px solid;
-                    /* max-height: 20%; */
+                    max-height: 30%;
+                    overflow: auto;
                 }
 
                 .story #header {
@@ -204,17 +205,29 @@
                 }
 
                 #storybox #keyword {
-                    font-size: 1.3em;
+                    font-size: 1.18em;
+                    overflow: hidden;
                     text-align: right;
                     margin-bottom: .5em;
                 }
+
                 #storybox #keyword span{
                     float: left;
-                    font-family: Meiryo, sans-serif !important;
-
+                    font-size: 1.1em;
+                    font-family: Meiryo, sans-serif;
+                }
+                #primitives summary{
+                    margin-top: 1em;
+                    margin-bottom: .3em;
+                    color: #999999;
+                    font-size: .8em;
+                }
+                #primitives p{
+                    margin: 1em ;
+                    font-size: .7em;
                 }
 
-                .debug, #primitives {
+                .debug {
                     display: none;
                 }
 
