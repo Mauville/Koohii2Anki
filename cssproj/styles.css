@@ -150,12 +150,6 @@
 
                 /* #fader { } */
 
-                #detailbox {
-                    font-size: 4.0em;
-                    text-align: left;
-                    width: 87%;
-                }
-
                 .box {
                     font-size: 4.5em;
                     width: 81%;
@@ -166,13 +160,25 @@
                     max-height: 40%;
                 }
 
+                #detailbox {
+                    width: 75%;
+                    font-size: 4.0em;
+                    text-align: left;
+                    max-height: 70%;
+                }
+
                 #detailbox td {
-                    padding: .8em 0.9em;
+                    padding: .9em 0.4em;
                 }
 
                 #detailbox .lead {
                     color: #999999;
                     padding-right: 0;
+                }
+
+                .scrollable {
+                    max-height: 4em;
+                    overflow: auto;
                 }
 
                 #dictbox {
@@ -212,29 +218,31 @@
                     margin-bottom: .5em;
                 }
 
-                #storybox #keyword span{
+                #storybox #keyword span {
                     float: left;
                     font-size: 1.1em;
                     font-family: Meiryo, sans-serif;
                 }
-                #primitives summary{
+
+                #primitives summary {
                     margin-top: 1em;
                     margin-bottom: .3em;
                     color: #999999;
                     font-size: .8em;
                 }
-                #primitives p{
-                    margin: 1em ;
+
+                #primitives p {
+                    margin: 1em;
                     font-size: .7em;
                 }
 
-                .toggled{
-                   background-color: #262626 !important;
-                   border-top: none !important;
-                   border-bottom: none !important;
+                .toggled {
+                    background-color: #262626 !important;
+                    border-top: none !important;
+                    border-bottom: none !important;
                 }
 
-                .debug, #dictbox, #storybox{
+                .debug, #dictbox, #storybox {
                     display: none;
                 }
 
