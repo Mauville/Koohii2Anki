@@ -73,6 +73,16 @@
     </style>
     <link rel="stylesheet" href="styles.css">
     <script src="android_asset/scripts/card.js" type="text/javascript"> </script>
+    <script src="_jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            console.log("ready!");
+            $("#details").on("click", function () {
+                console.log("click");
+                $("#dictbox").toggle();
+            });
+        });
+    </script>
 </head>
 
 <body class="card card1 vertically_centered night_mode chrome">
@@ -80,33 +90,7 @@
         <div class="answer id=" qa"="">
             <!-- Editable code -->
             <div class="back">
-                <!-- <div id="fader"></div> -->
 
-                <div id="storybox"class="box">
-                    <p id="primitives">
-                        Primitives: cleverness, every, reclining, lying down, mother, breasts, taskmaster
-                    </p>
-                    <p class="story" id="heisig1"> Behind <i>every</i> successful <i>taskmaster</i>, the
-                        <b>cleverness</b> of a fox
-                        to outwit his
-                        charges. </p>
-                    <p class="story" id="koohii1">Every master(or taskmaster) must have some degree of cleverness.</p>
-                    <p class="story" id="koohii2">This is another example of a koohii story. It has to have some degree
-                        on length to illustrate overflows and such.</p>
-                </div>
-
-                <!-- Main Card -->
-                <div class="debug">
-                    <div class="innerCard">
-                        <a href="http://jisho.org/kanji/details/敏" id="keyword">cleverness</a>
-                        <div id="kanji" class="KanjiCont">敏</div>
-                        <ul id="bottombar">
-                            <li id="strokenum">画数<span id="num">10</span></li>
-                            <li id="framenum">498</li>
-                            <!-- TODO: add support for other frame numbers through commented lines -->
-                        </ul>
-                    </div>
-                </div>
 
                 <!-- Button Bar -->
                 <ul id="buttonbar">
@@ -115,66 +99,113 @@
                     <li id="dict">Dictionary</li>
                 </ul>
 
-
-                <div class="debug"">
-
-                <!-- Dictionary Box -->
-                <div id=" dictbox" class="box">
-                    <p>
-                        毎(ごと): each respectively
-                        <br>
-                        毎度(まいど): each time, common service-sector greeting
-                        <br>
-                        毎朝(まいあさ): every morning
-                        <br>
-                        毎月(まいげつ): every month, each month, monthly
-                        <br>
-                        毎週(まいしゅう): every week
-                        <br>
-                        毎日(まいにち): every day
-                        <br>
-                        毎晩(まいばん): every night
-                        <br>
-
+                <!-- storybox -->
+                <div id="storybox" class="box">
+                    <a href="http://jisho.org/kanji/details/敏" id="keyword">
+                        <!--<span id="char">敏</span>--> cleverness</a>
+                    <div class="story" id="heisig1">
+                        <!-- make allof the stories confitionsl if the field exists in anki -->
+                        <p id="header">Heisig's</p>
+                        <p>
+                            Behind <i>every</i> successful <i>taskmaster</i>, the <b>cleverness</b> of a fox to outwit
+                            his
+                            charges.
+                    </div>
+                    <div class="story" id="koohii1">
+                        <p id="header">Koohii #1</p>
+                        <p> Every master(or taskmaster) must have some degree of
+                            cleverness.
+                        </p>
+                    </div>
+                    <div class="story" id="koohii2">
+                        <p id="header">Koohii #2</p>
+                        <p>This is another example of a koohii story. It has to have some degree on length to
+                            illustrate overflows and such.
+                        </p>
+                    </div>
+                    <p id="primitives">
+                            Primitives: cleverness, every, reclining, lying down, mother, breasts, taskmaster
                     </p>
                 </div>
+                <!-- ************************* -->
+                <!-- DONOTSHOW -->
+                <!-- ************************* -->
+                <div class="debug"">
 
-                <img id="strokes" class="debug" src="E6958F.png">
-
-                <!-- Detail Box -->
-                <table id="detailbox" class="box">
-                    <tr>
-                        <td class="lead">Kun:</td>
-                        <td>{{kunYomi}}ビン</td>
-                    </tr>
-                    <tr>
-                        <td class="lead" id="lead">On:</td>
-                        <td>{{onYomi}}さとい</td>
-                    </tr>
-                    <tr>
-                        <td class="lead">Lesson:</td>
-                        <td>50</td>
-                    </tr>
-                    <tr>
-                        <td class="lead">Jouyou:</td>
-                        <td>Names</td>
-                    </tr>
-                    <tr>
-                        <td class="lead">JLPT:</td>
-                        <td>N0</td>
-                    </tr>
-                    <tr>
-                        <td class="lead">Compounds:</td>
-                        <td>
-                            <p class="details" id="readexams"> 一度 (いちど), 一座 (いちざ), 第一 (だいいち), 一 (ひと), 一つ (ひと.つ) </p>
-                        </td>
-                    </tr>
-                </table>
-
-
-
+                    <!-- Main Card -->
+                    <div>
+                        <div class=" innerCard">
+                    <a href="http://jisho.org/kanji/details/敏" id="keyword">cleverness</a>
+                    <div id="kanji" class="KanjiCont">敏</div>
+                    <ul id="bottombar">
+                        <li id="strokenum">画数<span id="num">10</span></li>
+                        <li id="framenum">498</li>
+                        <!-- TODO: add support for other frame numbers through commented lines -->
+                    </ul>
+                </div>
             </div>
+
+            <!-- Dictionary Box -->
+            <div id="dictbox" class="box">
+
+                <p>
+                    毎(ごと): each respectively
+                    <br>
+                    毎度(まいど): each time, common service-sector greeting
+                    <br>
+                    毎朝(まいあさ): every morning
+                    <br>
+                    毎月(まいげつ): every month, each month, monthly
+                    <br>
+                    毎週(まいしゅう): every week
+                    <br>
+                    毎日(まいにち): every day
+                    <br>
+                    毎晩(まいばん): every night
+                    <br>
+
+                </p>
+            </div>
+
+            <!-- Strokes -->
+            <img id="strokes" class="debug" src="E6958F.png">
+
+            <!-- Detail Box -->
+            <table id="detailbox" class="box">
+                <tr>
+                    <td class="lead">Kun:</td>
+                    <td>{{kunYomi}}ビン</td>
+                </tr>
+                <tr>
+                    <td class="lead" id="lead">On:</td>
+                    <td>{{onYomi}}さとい</td>
+                </tr>
+                <tr>
+                    <td class="lead">Lesson:</td>
+                    <td>50</td>
+                </tr>
+                <tr>
+                    <td class="lead">Jouyou:</td>
+                    <td>Names</td>
+                </tr>
+                <tr>
+                    <td class="lead">JLPT:</td>
+                    <td>N0</td>
+                </tr>
+                <tr>
+                    <td class="lead">Cpds:</td>
+                    <td>
+                        <p class="details" id="readexams"> 一度 (いちど), 一座 (いちざ), 第一 (だいいち), 一 (ひと), 一つ (ひと.つ) </p>
+                    </td>
+                </tr>
+            </table>
+
+
         </div>
+        <!-- ************************* -->
+        <!-- DONOTSHOW -->
+        <!-- ************************* -->
+    </div>
 
     </div>
     <!-- Editable code -->
