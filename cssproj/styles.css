@@ -1,45 +1,4 @@
-                /* http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126 License: none (public domain) */
-
-                html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, u, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-                    margin: 0;
-                    padding: 0;
-                    border: 0;
-                    font-size: 100%;
-                    font: inherit;
-                    vertical-align: baseline;
-                }
-
-                /* HTML5 display-role reset for older browsers */
-
-                article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-                    display: block;
-                }
-
-                body {
-                    line-height: 1;
-                }
-
-                ol, ul {
-                    list-style: none;
-                }
-
-                blockquote, q {
-                    quotes: none;
-                }
-
-                blockquote:before, blockquote:after, q:before, q:after {
-                    content: '';
-                    content: none;
-                }
-
-                table {
-                    border-collapse: collapse;
-                    border-spacing: 0;
-                }
-
-                /* change body em to adjust to phone size */
-
-                /* change #num rem to adjust size */
+                /* http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126 License: none (public domain) */ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, u, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; } /* HTML5 display-role reset for older browsers */ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; } body { line-height: 1; } ol, ul { list-style: none; } blockquote, q { quotes: none; } blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; } table { border-collapse: collapse; border-spacing: 0; } /* change body em to adjust to phone size */ /* change #num rem to adjust size */
 
                 /********************/
 
@@ -65,26 +24,37 @@
                     justify-content: space-between;
                     position: absolute;
                     background-color: #262626;
-                    bottom: 3em;
+                    bottom: 3.5em;
                     left: 50%;
                     transform: translateX(-50%);
                     width: 87%;
                     height: 86%;
                     margin: 0 auto;
-                    padding: 2.3em 2.6em 3.5em 2.7em;
+                    padding: .5rem 1.6em;
+                    z-index: 0;
                 }
 
                 #keyword {
                     text-decoration: none;
                     color: white;
                     font-size: 4.8em;
+                    padding: 0.3em 0.7em;
                 }
 
                 #kanji {
-                    /* margin-top: 50vh; */
-                    font-size: 40em;
+                    margin-top: -50vh;
+                    font-size: 33em;
                     font-family: 'Times New Roman', Times, serif !important;
                     align-self: center;
+                }
+
+                #strokes{
+                    display: none;
+                    background-color: #bebebe;
+                    filter: invert(100%);
+                    margin: 0 auto;
+                    padding: 3em;
+                    height: 33em;
                 }
 
                 .bottom-line {
@@ -98,7 +68,8 @@
                 #bottombar li {
                     color: #999999;
                     display: inline;
-                    font-size: 3.5em;
+                    font-size: 3.2em;
+                    padding-bottom: .5em;
                 }
 
                 #bottombar li #num {
@@ -106,11 +77,13 @@
                 }
 
                 #bottombar li:nth-child(1) {
-                    font: serif;
+                    font-family: serif;
+                    padding-left: 1em;
                 }
 
                 #bottombar li:nth-child(2) {
                     float: right;
+                    padding-right: 1em;
                 }
 
                 /* Button Bar */
@@ -144,34 +117,43 @@
                     color: #FFEE58;
                 }
 
-                #Dict {
+                #dict {
                     color: #00BCD4;
                 }
 
-                /* #fader { } */
-
                 .box {
+                    display: none;
+                    position: relative;
                     font-size: 4.5em;
                     width: 81%;
                     margin: 0 auto;
                     background-color: #262626;
                     padding: 1em 1.2em;
-                    border-radius: 15px;
+                    border-radius: 18px;
                     max-height: 40%;
+                    box-shadow: 0px 18px 38px -1px #141414;
+                    transition: display 5s ease-in;
                 }
 
-                #detailbox {
+                #storywrapper {
+                    display: none;
+                    position: relative;
+                    z-index: 7;
+                }
+
+                #detailsbox {
                     width: 75%;
                     font-size: 4.0em;
                     text-align: left;
                     max-height: 70%;
+                    z-index: 500;
                 }
 
-                #detailbox td {
+                #detailsbox td {
                     padding: .9em 0.4em;
                 }
 
-                #detailbox .lead {
+                #detailsbox .lead {
                     color: #999999;
                     padding-right: 0;
                 }
@@ -185,6 +167,7 @@
                     line-height: 1.75;
                     overflow: auto;
                     font-size: 3.8em;
+                    z-index: 6;
                 }
 
                 #storybox {
@@ -195,11 +178,10 @@
                 }
 
                 .story {
-                    /* background-color: dodgerblue; */
                     margin: .7em 0;
                     padding: 1.0em 0;
                     font-size: .9em;
-                    border-top: #999999 .5px solid;
+                    /* border-top: #999999 .5px solid; */
                     border-bottom: #999999 .5px solid;
                     max-height: 30%;
                     overflow: auto;
@@ -242,7 +224,18 @@
                     border-bottom: none !important;
                 }
 
-                .debug, #dictbox, #storybox {
+                #fade {
+                    display: none;
+                    position: absolute;
+                    top: 0;
+                    height: 100%;
+                    width: 99%;
+                    background: #323232;
+                    opacity: .95;
+                    z-index: 1;
+                }
+
+                .debug {
                     display: none;
                 }
 

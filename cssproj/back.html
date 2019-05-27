@@ -75,26 +75,45 @@
     <script src="android_asset/scripts/card.js" type="text/javascript"> </script>
     <script src="_jquery-3.4.1.min.js"></script>
     <script>
+
+        function clickTopBar(currentID) {
+
+            $("#fade").fadeIn(5);
+            storyflag = currentID == "#story"
+
+            $(".box:not(" + currentID + "box):not(#storybox)").hide(5, "linear");
+            if (!storyflag)
+                $("#storywrapper").hide(5, "linear");
+
+            var IDS = ["#dict", "#story", "#details"]
+            IDS = IDS.splice(IDS.indexOf(currentID), 1)
+
+            $(".toggled:not(" + currentID + ")").removeClass("toggled");
+            $(currentID).toggleClass("toggled")
+            if (!storyflag)
+                $(currentID + "box").fadeToggle(5, "linear");
+            else
+                $(currentID + "wrapper").fadeToggle(5, "linear");
+
+            var toggle = $(IDS[0]).hasClass("toggled") || $(IDS[1]).hasClass("toggled") || $(IDS[2]).hasClass("toggled");
+            if (!toggle) {
+                $("#fade").fadeOut(5);
+            }
+        }
+
+        function switcher() {
+            console.log("this")
+            $("#kanji").toggle();
+            $("#strokes").toggle();
+        }
+
         $(document).ready(function () {
-            console.log("ready!");
-            $("#dict").on("click", function () {
-                $(".box:not(#dictbox)").hide();
-                $(".toggled:not(#dict)").removeClass("toggled");
-                $(this).toggleClass("toggled")
-                $("#dictbox").toggle();
-            });
-            $("#story").on("click", function () {
-                $(".box:not(#storybox)").hide();
-                $(".toggled:not(#story)").removeClass("toggled");
-                $(this).toggleClass("toggled")
-                $("#storybox").toggle();
-            });
-            $("#details").on("click", function () {
-                $(".box:not(#detailbox)").hide();
-                $(".toggled:not(#details)").removeClass("toggled");
-                $(this).toggleClass("toggled")
-                $("#detailbox").toggle();
-            });
+
+            $("#dict").on("click", function () { clickTopBar("#dict") });
+            $("#story").on("click", function () { clickTopBar("#story") });
+            $("#details").on("click", function () { clickTopBar("#details") });
+            $("#kanji").on("click", function () { switcher() });
+            $("#strokes").on("click", function () { switcher() });
         });
     </script>
 </head>
@@ -105,6 +124,22 @@
             <!-- Editable code -->
             <div class="back">
 
+                <!-- Blur -->
+                <div id="fade"></div>
+
+
+                <!-- Main Card -->
+                <div class="innerCard">
+                    <a href="http://jisho.org/kanji/details/敏" id="keyword">cleverness</a>
+                    <div id="kanji" class="KanjiCont">敏</div>
+                    <!-- Strokes -->
+                    <img id="strokes" src="08d64.svg">
+                    <ul id="bottombar">
+                        <li id="strokenum">画数<span id="num">10</span></li>
+                        <li id="framenum">498</li>
+                        <!-- TODO: add support for other frame numbers through commented lines -->
+                    </ul>
+                </div>
 
                 <!-- Button Bar -->
                 <ul id="buttonbar">
@@ -113,65 +148,13 @@
                     <li id="dict">Dictionary</li>
                 </ul>
 
-                <!-- TODO fix this with overflows, paddings ans shit -->
-                <!-- Detail Box -->
-                <div id="detailbox" class="box">
-                    <table id="detailtable">
-                        <tr id="heads">
-                            <td class="lead">Kun:</td>
-                            <td> <div class="scrollable">い.きる、い.かす、い.ける、う.まれる、う.まれ、うまれ、う.む、お.う、は.える、は.やす、き、なま、なま-、な.る、な.す、む.す、-う</div></td>
-                        </tr>
-                        <tr>
-                            <td class="lead" id="lead">On:</td>
-                            <td> <div class="scrollable">い.きる、い.かす、い.ける、う.まれる、う.まれ、うまれ、う.む、お.う、は.える、は.やす、き、なま、なま-、な.る、な.す、む.す、-う</div></td>
-                        </tr>
-                        <tr>
-                            <td class="lead">Lesson:</td>
-                            <td>50</td>
-                        </tr>
-                        <tr>
-                            <td class="lead">Jouyou:</td>
-                            <td>Names</td>
-                        </tr>
-                        <tr>
-                            <td class="lead">JLPT:</td>
-                            <td>N0</td>
-                        </tr>
-                        <tr id="botts">
-                            <td class="lead">Cpds:</td>
-                            <td>
-                                <p class="details scrollable" id="readexams">生活 (せいかつ), 発生 (はっせい), 先生 (せんせい), 生かす (い.かす), 生きる
-                                    (い.きる), 生ける (い.ける), 生まれる (う.まれる), 生む (う.む), 生う (お.う), 生 (き), 生 (なま), 生える (は.える), 生やす
-                                    (は.やす)</p>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-
-                <!-- ************************* -->
-                <!-- DONOTSHOW -->
-                <!-- ************************* -->
-                <div class="debug"">
-
-                    <!-- Main Card -->
-                    <div>
-                        <div class=" innerCard">
-                    <a href="http://jisho.org/kanji/details/敏" id="keyword">cleverness</a>
-                    <div id="kanji" class="KanjiCont">敏</div>
-                    <ul id="bottombar">
-                        <li id="strokenum">画数<span id="num">10</span></li>
-                        <li id="framenum">498</li>
-                        <!-- TODO: add support for other frame numbers through commented lines -->
-                    </ul>
-
-                    <!-- Strokes -->
-                    <img id="strokes" class="debug" src="E6958F.png">
-                    fix the weird kanji
-                    <!-- storybox -->
+                <!-- storybox -->
+                <div id="storywrapper">
                     <div id="storybox" class="box">
-                        <a href="http://jisho.org/kanji/details/敏" id="keyword"><span>敏</span> cleverness</a>
+                        <a href="http://jisho.org/kanji/details/敏" target="_blank" id="keyword"><span>敏</span>
+                            cleverness</a>
                         <div class="story" id="heisig1">
-                            <!-- make allof the stories confitionsl if the field exists in anki -->
+                            <!-- make allof the stories html conditional if the field exists in anki -->
                             <p id="header">Heisig's</p>
                             <p>
                                 Behind <i>every</i> successful <i>taskmaster</i>, the <b>cleverness</b> of a fox to
@@ -199,33 +182,71 @@
                             </details>
                         </div>
                     </div>
-                    <!-- Dictionary Box -->
-                    <div id="dictbox" class="box">
-
-                        <p>
-                            毎(ごと): each respectively
-                            <br>
-                            毎度(まいど): each time, common service-sector greeting
-                            <br>
-                            毎朝(まいあさ): every morning
-                            <br>
-                            毎月(まいげつ): every month, each month, monthly
-                            <br>
-                            毎週(まいしゅう): every week
-                            <br>
-                            毎日(まいにち): every day
-                            <br>
-                            毎晩(まいばん): every night
-                            <br>
-
-                        </p>
-                    </div>
-
                 </div>
-                <!-- ************************* -->
-                <!-- DONOTSHOW -->
-                <!-- ************************* -->
 
+
+                <!-- Dictionary Box -->
+                <div id="dictbox" class="box">
+
+                    <p>
+                        毎(ごと): each respectively
+                        <br>
+                        毎度(まいど): each time, common service-sector greeting
+                        <br>
+                        毎朝(まいあさ): every morning
+                        <br>
+                        毎月(まいげつ): every month, each month, monthly
+                        <br>
+                        毎週(まいしゅう): every week
+                        <br>
+                        毎日(まいにち): every day
+                        <br>
+                        毎晩(まいばん): every night
+                        <br>
+
+                    </p>
+                </div>
+
+                <!-- Detail Box -->
+                <div id="detailsbox" class="box">
+                    <table id="detailtable">
+                        <tr id="heads">
+                            <td class="lead">Kun:</td>
+                            <td>
+                                <div class="scrollable">
+                                    い.きる、い.かす、い.ける、う.まれる、う.まれ、うまれ、う.む、お.う、は.える、は.やす、き、なま、なま-、な.る、な.す、む.す、-う</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="lead" id="lead">On:</td>
+                            <td>
+                                <div class="scrollable">
+                                    い.きる、い.かす、い.ける、う.まれる、う.まれ、うまれ、う.む、お.う、は.える、は.やす、き、なま、なま-、な.る、な.す、む.す、-う</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="lead">Lesson:</td>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <td class="lead">Jouyou:</td>
+                            <td>Names</td>
+                        </tr>
+                        <tr>
+                            <td class="lead">JLPT:</td>
+                            <td>N0</td>
+                        </tr>
+                        <tr id="botts">
+                            <td class="lead">Cpds:</td>
+                            <td>
+                                <p class="details scrollable" id="readexams">生活 (せいかつ), 発生 (はっせい), 先生 (せんせい), 生かす
+                                    (い.かす), 生きる
+                                    (い.きる), 生ける (い.ける), 生まれる (う.まれる), 生む (う.む), 生う (お.う), 生 (き), 生 (なま), 生える (は.える), 生やす
+                                    (は.やす)</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
