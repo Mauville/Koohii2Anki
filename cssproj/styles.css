@@ -1,11 +1,13 @@
                 /* http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126 License: none (public domain) */ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, u, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; } /* HTML5 display-role reset for older browsers */ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; } body { line-height: 1; } ol, ul { list-style: none; } blockquote, q { quotes: none; } blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; } table { border-collapse: collapse; border-spacing: 0; } /* change body em to adjust to phone size */ /* change #num rem to adjust size */
 
-                /********************/
 
+                /********************/
                 /* Main Card */
-
                 /********************/
 
+                @media screen and (min-width: 768px) {
+
+                  }
                 body {
                     background-color: #1a1a1a;
                     /* font-size: .45em; */
@@ -44,15 +46,15 @@
                 #kanji {
                     margin-top: -50vh;
                     font-size: 33em;
-                    font-family: 'Times New Roman', Times, serif !important;
+                    font-family: "Hiragino Mincho Pro", "ヒラギノ明朝 Pro W3", "ＭＳ 明朝","ＭＳ Ｐ明朝",serif !important;
                     align-self: center;
                 }
 
                 #strokes{
                     display: none;
-                    background-color: #bebebe;
                     filter: invert(100%);
                     margin: 0 auto;
+                    margin-top: -50vh;
                     padding: 3em;
                     height: 33em;
                 }
@@ -106,18 +108,33 @@
                     width: 100%;
                     padding: 1.5em 1em;
                     border: solid 0.6px #8f8d8d8f;
+                }
+
+                #buttonbar li.night_mode {
                     background-color: #000000;
                 }
 
                 #details {
-                    color: #ff99ff;
+                    background-color: #ff3aff;
                 }
 
                 #story {
-                    color: #FFEE58;
+                    background-color: rgb(255, 208, 56);
                 }
 
                 #dict {
+                    background-color: rgb(0, 174, 197);
+                }
+
+                #details.night_mode {
+                    color: #ff99ff;
+                }
+
+                #story.night_mode {
+                    color: #FFEE58;
+                }
+
+                #dict.night_mode {
                     color: #00BCD4;
                 }
 
