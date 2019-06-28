@@ -1,0 +1,23 @@
+﻿= Koohii2Anki
+Full Kanji Koohii to Anki Migration
+
+== How do I into this?
+
+
+== What's in the box
+
+== Why?
+Many reasons.
+
+* Tl;dr Anki is better. 
+** When I began my journey through Japanese, I was eager to go and jumped straight into RTK and KK. After completing RTK1, I began studying with Anki. My world was shook. It was so much better; plugins, card styling, better failed card handling, portability, configurable SRS, offline capabilities, FOSS. I decided that switching from KK to Anki was to be my next step.
+
+* With Koohii Forums closing down on 2019, we got reminded that the Kanji Koohii depends on a man and a few contributors. If someday the site gets nuked, all the reviewing system and personal progress will be deleted too.
+
+* The site's development is stalled. Although KK has been https://github.com/fabd/kanji-koohii[open sourced] some time ago, no major improvements have been done since. What's more, Fabrice, the main developer of the site, has publicly announced to have switched the site to maintenance mode.
+
+* The portable reviewer for KK (Android) is not open source, hard to install and a bit dated. For those of you who don't know, http://slideme.org/application/kanji-ryokucha[Kanji Ryokucha] is an app that allows you to review RTK on the go. It has many advantages over the website such as stroke order and a scratchpad to write. Unfortunately, it is dependent on the internet to reach the website.
+
+
+
+
