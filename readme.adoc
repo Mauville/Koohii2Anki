@@ -1,11 +1,11 @@
 ﻿= Koohii2Anki
+:imagedir: imagedir/
 :card-import: importCSV
 :output: Formatted.txt
 :icons: font
 :experimental:
 :toc:
 :toc-placement!:
-Full Kanji Koohii to Anki Migration
 
 ifdef::env-github[]
 :tip-caption: :bulb:
@@ -14,20 +14,21 @@ ifdef::env-github[]
 :caution-caption: :fire:
 :warning-caption: :warning:
 endif::[]
-
+Full Kanji Koohii to Anki Migration
 
 toc::[]
 
 == What's in the box?
 * A ready-to-bake deck containing _almost_ all the information you need. footnote:[Due to copyright issues, I cannot provide Heisig's Stories. You'll have to look for them on your own.]
-* *[red]##Flaring##* card design. Inspired by Kanji Koohii, designed with https://github.com/Mauville/AnkiDroid-Card-Preview[AnkiDroid Card Preview]
+* [red]##Flaring## card design. Inspired by Kanji Koohii, designed with https://github.com/Mauville/AnkiDroid-Card-Preview[AnkiDroid Card Preview]
 
 * Scripts to migrate everything from Kanji Koohii to Anki
 
 == Prework
 
 .Do you know how to use Anki?
-If not, you can start by watching  https://youtu.be/QS2G-k2hQyg?t=98[this video] on the basics on Anki.  You can also read the https://apps.ankiweb.net/docs/manual.html[manual] if you get lost. This tutorial will run you through the most important stuff so you should learn quite a bit of Anki if you follow it.
+If not, you can start by watching  https://youtu.be/QS2G-k2hQyg?t=98[this video] on the basics on Anki.  You can also read the https://apps.ankiweb.net/docs/manual.html[manual] if you get lost. +
+This tutorial will run you through the most important stuff so you should learn quite a bit of Anki if you follow it.
 
 
 == Instructions
@@ -44,26 +45,33 @@ If not, you can start by watching  https://youtu.be/QS2G-k2hQyg?t=98[this video]
 .. If you are using Linux or MacOS or you are comfortable with a terminal, you should follow the <<_script_setup, extra steps>>
 
 === Styles, Stroke Order, Progress
+. Import `SkeletonDeck.apkg` into Anki.
+. Delete the demo card that comes included with it.
 . Import `{output}` into Anki.
+.. The import dialogue should look like this.
+image::import.png[]
+. Move `_jquery-3.4.1.min.js` into your https://apps.ankiweb.net/docs/manual.html#files[collection.media] directory
 . You should now have a new deck called Remembering the Kanji in Anki.
 
-==== Card Styles
+==== Card Styles and Edition
+The deck comes with predetermined styles for smartphones so if you have the 6th edition and you'll be reviewing on mobile, skip this part.
+
 . Hit kbd:[B] and select the Remembering the Kanji deck on the left.
 . Hit kbd:[Ctrl+L] or the btn:[Cards] button 
-. Copy the content from each file in `cardStyles` to it's field
-+
+
 [NOTE]
 ====
 If you are using the 4th edition of the book, you'll want to change the `Back Template` to reflect the edition. +
 You should change the line `<li id="framenum">{{frameNoV6}}</li>` to `<li id="framenum">{{frameNoV4}}</li>`.
 ====
-+
-.. The `Styling` field needs to be adjusted to adapt to screen size. 
-. Decide which device size you'll be using the most (from best to worst support):
-.. If you choose a smartphone, you should choose a value of around `.45em`
+
+The `Styling` field's `font-size:` needs to be adjusted to adapt to screen size. +
+Decide which device size you'll be using the most (from best to worst support):
+
+.. If you choose a smartphone, you should choose a value of around `.45em` (default)
 .. If you choose a tablet, you should choose a value of around `.4em`
 .. If you choose a desktop computer, you should choose a value of around `.3em`
-.. Experiment with the values to see what works for you
+Experiment with the values to see what works for you
 
 
 ==== Stroke Order and Progress
@@ -74,12 +82,18 @@ You should change the line `<li id="framenum">{{frameNoV6}}</li>` to `<li id="fr
 . Copy `1340694622 1947297285` to the `code` field and press btn:[OK]. (This will download https://ankiweb.net/shared/info/1947297285[these] https://ankiweb.net/shared/info/1340694622[addons].)
 . When the download has finished, restart Anki
 . Click on menu:Tools[Kanji Colorizer for RTK] to generate stroke order diagrams.
++
+NOTE: If you are using the 4th edition of the book, you should change the following plugin configuration files to reflect your version before moving to the next step. You can do this in menu:Tools[Add-Ons], select the "Import Kanji Koohii Progress" addon and click on config.
++
 . Click on menu:Tools[Import Kanji Koohii Progress] and select the `rtk_flashcards.csv` file you downloaded earlier.
+
 
 NOTE: Anki can seemingly not respond while executing the plugins. This is normal. Give it some time.
 
 
 ==== Deck Options
+
+I've been working with this option group for a while and it works for me. Options are by far the most difficult part of Anki to get right so modify them only if you know what you are doing.
 
 . Go to menu:Tools[Preferences > Basic], then set the Learn ahead limit to 2mins
 . In here you can also set if you want to see new cards first, after or mixed in with reviews.
@@ -113,8 +127,8 @@ Leech Action:: Tag Only +
 
 https://vladsperspective.wordpress.com/2017/03/14/optimize-your-anki-youre-overtesting-yourself-on-too-few-cards-make-huge-gains/[Source]
 
-I've been working with this option group for a while and it works for me. Options are by far the most difficult part of Anki to get right so modify them only if you know what you are doing.
 
+Phew! That's it!  🎉🎉🎉🎉
 
 == Script Setup
 If you can't run the `getstories.exe` you can use the uncompiled Python version.
@@ -156,5 +170,6 @@ Tl;dr Anki is better.
 
 
 == Licence
-GPL v3.1
+GPL v3.0
+Kanji Colorizer, used under GPL 3.0 terms
 

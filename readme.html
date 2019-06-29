@@ -5,7 +5,6 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.8">
-<meta name="author" content="Full Kanji Koohii to Anki Migration">
 <title>Koohii2Anki</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
@@ -435,13 +434,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <body class="article">
 <div id="header">
 <h1>Koohii2Anki</h1>
-<div class="details">
-<span id="author" class="author">Full Kanji Koohii to Anki Migration</span><br>
-</div>
 </div>
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
+<div class="paragraph">
+<p>Full Kanji Koohii to Anki Migration</p>
+</div>
 <div id="toc" class="toc">
 <div id="toctitle" class="title">Table of Contents</div>
 <ul class="sectlevel1">
@@ -469,7 +468,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>A ready-to-bake deck containing <em>almost</em> all the information you need. <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p>
 </li>
 <li>
-<p><strong><span class="red">Flaring</span></strong> card design. Inspired by Kanji Koohii, designed with <a href="https://github.com/Mauville/AnkiDroid-Card-Preview">AnkiDroid Card Preview</a></p>
+<p><span class="red">Flaring</span> card design. Inspired by Kanji Koohii, designed with <a href="https://github.com/Mauville/AnkiDroid-Card-Preview">AnkiDroid Card Preview</a></p>
 </li>
 <li>
 <p>Scripts to migrate everything from Kanji Koohii to Anki</p>
@@ -483,7 +482,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sectionbody">
 <div class="paragraph">
 <div class="title">Do you know how to use Anki?</div>
-<p>If not, you can start by watching  <a href="https://youtu.be/QS2G-k2hQyg?t=98">this video</a> on the basics on Anki.  You can also read the <a href="https://apps.ankiweb.net/docs/manual.html">manual</a> if you get lost. This tutorial will run you through the most important stuff so you should learn quite a bit of Anki if you follow it.</p>
+<p>If not, you can start by watching  <a href="https://youtu.be/QS2G-k2hQyg?t=98">this video</a> on the basics on Anki.  You can also read the <a href="https://apps.ankiweb.net/docs/manual.html">manual</a> if you get lost.<br>
+This tutorial will run you through the most important stuff so you should learn quite a bit of Anki if you follow it.</p>
 </div>
 </div>
 </div>
@@ -530,7 +530,24 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="olist arabic">
 <ol class="arabic">
 <li>
+<p>Import <code>SkeletonDeck.apkg</code> into Anki.</p>
+</li>
+<li>
+<p>Delete the demo card that comes included with it.</p>
+</li>
+<li>
 <p>Import <code>Formatted.txt</code> into Anki.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The import dialogue should look like this.
+image::import.png[]</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Move <code>_jquery-3.4.1.min.js</code> into your <a href="https://apps.ankiweb.net/docs/manual.html#files">collection.media</a> directory</p>
 </li>
 <li>
 <p>You should now have a new deck called Remembering the Kanji in Anki.</p>
@@ -538,7 +555,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ol>
 </div>
 <div class="sect3">
-<h4 id="_card_styles">Card Styles</h4>
+<h4 id="_card_styles_and_edition">Card Styles and Edition</h4>
+<div class="paragraph">
+<p>The deck comes with predetermined styles for smartphones so if you have the 6th edition and you&#8217;ll be reviewing on mobile, skip this part.</p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -547,8 +567,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li>
 <p>Hit <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>L</kbd></span> or the <b class="button">Cards</b> button</p>
 </li>
-<li>
-<p>Copy the content from each file in <code>cardStyles</code> to it&#8217;s field</p>
+</ol>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -564,32 +584,21 @@ You should change the line <code>&lt;li id="framenum"&gt;{{frameNoV6}}&lt;/li&gt
 </tr>
 </table>
 </div>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>The <code>Styling</code> field needs to be adjusted to adapt to screen size.</p>
-</li>
-</ol>
+<div class="paragraph">
+<p>The <code>Styling</code> field&#8217;s <code>font-size:</code> needs to be adjusted to adapt to screen size.<br>
+Decide which device size you&#8217;ll be using the most (from best to worst support):</p>
 </div>
-</li>
-<li>
-<p>Decide which device size you&#8217;ll be using the most (from best to worst support):</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>If you choose a smartphone, you should choose a value of around <code>.45em</code></p>
+<p>If you choose a smartphone, you should choose a value of around <code>.45em</code> (default)</p>
 </li>
 <li>
 <p>If you choose a tablet, you should choose a value of around <code>.4em</code></p>
 </li>
 <li>
-<p>If you choose a desktop computer, you should choose a value of around <code>.3em</code></p>
-</li>
-<li>
-<p>Experiment with the values to see what works for you</p>
-</li>
-</ol>
-</div>
+<p>If you choose a desktop computer, you should choose a value of around <code>.3em</code>
+Experiment with the values to see what works for you</p>
 </li>
 </ol>
 </div>
@@ -618,6 +627,18 @@ You should change the line <code>&lt;li id="framenum"&gt;{{frameNoV6}}&lt;/li&gt
 </li>
 <li>
 <p>Click on <span class="menuseq"><b class="menu">Tools</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Kanji Colorizer for RTK</b></span> to generate stroke order diagrams.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If you are using the 4th edition of the book, you should change the following plugin configuration files to reflect your version before moving to the next step. You can do this in <span class="menuseq"><b class="menu">Tools</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Add-Ons</b></span>, select the "Import Kanji Koohii Progress" addon and click on config.
+</td>
+</tr>
+</table>
+</div>
 </li>
 <li>
 <p>Click on <span class="menuseq"><b class="menu">Tools</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Import Kanji Koohii Progress</b></span> and select the <code>rtk_flashcards.csv</code> file you downloaded earlier.</p>
@@ -639,6 +660,9 @@ Anki can seemingly not respond while executing the plugins. This is normal. Give
 </div>
 <div class="sect3">
 <h4 id="_deck_options">Deck Options</h4>
+<div class="paragraph">
+<p>I&#8217;ve been working with this option group for a while and it works for me. Options are by far the most difficult part of Anki to get right so modify them only if you know what you are doing.</p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -785,7 +809,7 @@ Leech Action
 <p><a href="https://vladsperspective.wordpress.com/2017/03/14/optimize-your-anki-youre-overtesting-yourself-on-too-few-cards-make-huge-gains/">Source</a></p>
 </div>
 <div class="paragraph">
-<p>I&#8217;ve been working with this option group for a while and it works for me. Options are by far the most difficult part of Anki to get right so modify them only if you know what you are doing.</p>
+<p>Phew! That&#8217;s it!  🎉🎉🎉🎉</p>
 </div>
 </div>
 </div>
@@ -891,7 +915,7 @@ If on any of these commands you get  <code>Python 2.x</code>, you should look in
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-06-28 15:42:38 -0500
+Last updated 2019-06-28 21:15:51 -0500
 </div>
 </div>
 </body>
