@@ -1,23 +1,160 @@
 ﻿= Koohii2Anki
+:card-import: importCSV
+:output: Formatted.txt
+:icons: font
+:experimental:
+:toc:
+:toc-placement!:
 Full Kanji Koohii to Anki Migration
 
-== How do I into this?
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
 
 
-== What's in the box
+toc::[]
+
+== What's in the box?
+* A ready-to-bake deck containing _almost_ all the information you need. footnote:[Due to copyright issues, I cannot provide Heisig's Stories. You'll have to look for them on your own.]
+* *[red]##Flaring##* card design. Inspired by Kanji Koohii, designed with https://github.com/Mauville/AnkiDroid-Card-Preview[AnkiDroid Card Preview]
+
+* Scripts to migrate everything from Kanji Koohii to Anki
+
+== Prework
+
+.Do you know how to use Anki?
+If not, you can start by watching  https://youtu.be/QS2G-k2hQyg?t=98[this video] on the basics on Anki.  You can also read the https://apps.ankiweb.net/docs/manual.html[manual] if you get lost. This tutorial will run you through the most important stuff so you should learn quite a bit of Anki if you follow it.
+
+
+== Instructions
+
+=== Importing Keywords and Stories
+
+. https://apps.ankiweb.net/[Install Anki.]
+. Download the https://www.github.com/Mauville/Koohii2Anki/releases/latest/download/K2A.zip[latest release] of Koohii2Anki.
+. Extract the archive to a location you remember.
+. https://kanji.koohii.com/study/mystories[Download] your stories and keywords from Kanji Koohii. You can do this in menu:Study[My Stories > Export to CSV]
+. Save the file to the `{card-import}` directory (it should be named `my_stories.csv`)
+. Run `getstories`.
+.. If you are using Windows, I've provided an exe for simplicity.
+.. If you are using Linux or MacOS or you are comfortable with a terminal, you should follow the <<_script_setup, extra steps>>
+
+=== Styles, Stroke Order, Progress
+. Import `{output}` into Anki.
+. You should now have a new deck called Remembering the Kanji in Anki.
+
+==== Card Styles
+. Hit kbd:[B] and select the Remembering the Kanji deck on the left.
+. Hit kbd:[Ctrl+L] or the btn:[Cards] button 
+. Copy the content from each file in `cardStyles` to it's field
++
+[NOTE]
+====
+If you are using the 4th edition of the book, you'll want to change the `Back Template` to reflect the edition. +
+You should change the line `<li id="framenum">{{frameNoV6}}</li>` to `<li id="framenum">{{frameNoV4}}</li>`.
+====
++
+.. The `Styling` field needs to be adjusted to adapt to screen size. 
+. Decide which device size you'll be using the most (from best to worst support):
+.. If you choose a smartphone, you should choose a value of around `.45em`
+.. If you choose a tablet, you should choose a value of around `.4em`
+.. If you choose a desktop computer, you should choose a value of around `.3em`
+.. Experiment with the values to see what works for you
+
+
+==== Stroke Order and Progress
+. Return to the Decks screen in Anki.
+. https://kanji.koohii.com/manage/export[Download] your progress from Kanji Koohii. You can get it from menu:Flashcards[Manage Flashcards > Export Flashcards]
+. Save this file to a place where you remember.
+. Press kbd:[Ctrl+Shift+A] or go into menu:Tools[Add-ons] and click on btn:[Get Add-ons]
+. Copy `1340694622 1947297285` to the `code` field and press btn:[OK]. (This will download https://ankiweb.net/shared/info/1947297285[these] https://ankiweb.net/shared/info/1340694622[addons].)
+. When the download has finished, restart Anki
+. Click on menu:Tools[Kanji Colorizer for RTK] to generate stroke order diagrams.
+. Click on menu:Tools[Import Kanji Koohii Progress] and select the `rtk_flashcards.csv` file you downloaded earlier.
+
+NOTE: Anki can seemingly not respond while executing the plugins. This is normal. Give it some time.
+
+
+==== Deck Options
+
+. Go to menu:Tools[Preferences > Basic], then set the Learn ahead limit to 2mins
+. In here you can also set if you want to see new cards first, after or mixed in with reviews.
+
+We will finally add an extra set of deck options to optimize learning rates
+
+. On the Decks screen, click on the little cog besides the Remembering the Kanji deck and choose Options.
+. Create a new option group with the following values:
+
+.New Cards
+[horizontal]
+Steps:: 1 10
+New Cards/day:: As many as you want (10 works good)
+Graduating Interval:: 2 days
+Easy Interval:: 2 days
+Starting Ease:: 250%
+
+.Reviews
+[horizontal]
+Maximum reviews/day:: 9999
+Easy bonus:: 100%
+Interval modifier:: 90%
+
+.Lapses
+[horizontal]
+Steps:: 1 20
+New Interval:: 100%
+Minimum Interval:: 2 days
+Leech Threshold:: 6 Lapses
+Leech Action:: Tag Only +
+
+https://vladsperspective.wordpress.com/2017/03/14/optimize-your-anki-youre-overtesting-yourself-on-too-few-cards-make-huge-gains/[Source]
+
+I've been working with this option group for a while and it works for me. Options are by far the most difficult part of Anki to get right so modify them only if you know what you are doing.
+
+
+== Script Setup
+If you can't run the `getstories.exe` you can use the uncompiled Python version.
+
+. https://www.python.org/downloads/[Install Python 3]
+. Make sure that you are running Python 3 by running in a terminal
++
+
+    python --version
++
+and 
++
+
+    pip --version
++
+NOTE: If on any of these commands you get  `Python 2.x`, you should look into getting python 3 into your PATH.
++
+. Install pandas.
++
+
+    python3 -m pip install --upgrade pandas
++
+. Run the script (remember cd'ing into the `{card-import}` directory) with:
++
+
+    python getstories.py
+
 
 == Why?
-Many reasons.
-
-* Tl;dr Anki is better. 
-** When I began my journey through Japanese, I was eager to go and jumped straight into RTK and KK. After completing RTK1, I began studying with Anki. My world was shook. It was so much better; plugins, card styling, better failed card handling, portability, configurable SRS, offline capabilities, FOSS. I decided that switching from KK to Anki was to be my next step.
+Tl;dr Anki is better. 
 
 * With Koohii Forums closing down on 2019, we got reminded that the Kanji Koohii depends on a man and a few contributors. If someday the site gets nuked, all the reviewing system and personal progress will be deleted too.
 
 * The site's development is stalled. Although KK has been https://github.com/fabd/kanji-koohii[open sourced] some time ago, no major improvements have been done since. What's more, Fabrice, the main developer of the site, has publicly announced to have switched the site to maintenance mode.
 
-* The portable reviewer for KK (Android) is not open source, hard to install and a bit dated. For those of you who don't know, http://slideme.org/application/kanji-ryokucha[Kanji Ryokucha] is an app that allows you to review RTK on the go. It has many advantages over the website such as stroke order and a scratchpad to write. Unfortunately, it is dependent on the internet to reach the website.
+* When I began my journey through Japanese, I was eager to go and jumped straight into RTK and KK. After completing RTK1, I began studying with Anki. My world was shook. It was so much better; plugins, card styling, better failed card handling, portability, configurable SRS, offline capabilities, FOSS. I decided that switching from KK to Anki was to be my next step.
+
+* The portable reviewer for KK (Android) is not open source, hard to install and a bit dated. For those of you who don't know, http://slideme.org/application/kanji-ryokucha[Kanji Ryokucha] is an app that allows you to review RTK on the go. It has many advantages over the website such as stroke order and a scratchpad to write. Unfortunately, it is dependent on the internet to get the cards.
 
 
-
+== Licence
+GPL v3.1
 
