@@ -8,9 +8,10 @@ stories = pandas.read_csv('my_stories.csv', sep=",", encoding="utf-8", usecols=[
 # read the deck transformed to tsv
 names = ["v4", "v6", "keyword", "kanji", "hint", "primitive", "strokeCount", "lesson", "heisigS", "heisigC", "MyStory",
          "KS1", "KS2", "Jou", "JLPT", "On", "Kun", "words", "reading", "Diagram", "?"]
-deck = pandas.read_csv('formattedRTK.tsv', sep="\t", names=names, encoding="utf-8", header=None, index_col=0)
+dtypes = {'MyStory': object, "keyword": object, "strokeCount": str, "lesson": str, "Jou": str, "JLPT": str}
+deck = pandas.read_csv('formattedRTK.tsv', sep="\t", names=names, encoding="utf-8", header=None, index_col=0, dtype=dtypes)
 # convert the MyStory and keyword columns to string in case of blanks
-deck = deck.astype({"MyStory": object, "keyword": object})
+# deck = deck.astype({"MyStory": object, "keyword": object, "strokeCount": str, "lesson": str, "Jou": str, "JLPT": str})
 
 # sort by version number
 deck = deck.sort_values(by=version)

@@ -1,5 +1,5 @@
 ﻿= Koohii2Anki
-:imagedir: imagedir/
+:imagesdir: imagesdir/
 :card-import: importCSV
 :output: Formatted.txt
 :icons: font
@@ -18,11 +18,19 @@ Full Kanji Koohii to Anki Migration
 
 toc::[]
 
+
 == What's in the box?
-* A ready-to-bake deck containing _almost_ all the information you need. footnote:[Due to copyright issues, I cannot provide Heisig's Stories. You'll have to look for them on your own.]
+* A ready-to-bake deck containing _almost_ all the information you could ever need. footnote:[Due to copyright issues, I cannot provide Heisig's Stories. You'll have to look for them on your own.]
 * [red]##Flaring## card design. Inspired by Kanji Koohii, designed with https://github.com/Mauville/AnkiDroid-Card-Preview[AnkiDroid Card Preview]
 
 * Scripts to migrate everything from Kanji Koohii to Anki
+
+[.text-center]
+image:demo7.gif[demo, 275, role="center"]
+
+++++
+<img align="center" role="center" width="275px" src="imagesdir/demo7.gif?raw=true"/>
+++++
 
 == Prework
 
@@ -49,7 +57,10 @@ This tutorial will run you through the most important stuff so you should learn 
 . Delete the demo card that comes included with it.
 . Import `{output}` into Anki.
 .. The import dialogue should look like this.
-image::import.png[]
+
+[.text-center]
+image::import.png[auto, 350]
+
 . Move `_jquery-3.4.1.min.js` into your https://apps.ankiweb.net/docs/manual.html#files[collection.media] directory
 . You should now have a new deck called Remembering the Kanji in Anki.
 
@@ -129,6 +140,9 @@ https://vladsperspective.wordpress.com/2017/03/14/optimize-your-anki-youre-overt
 
 
 Phew! That's it!  🎉🎉🎉🎉
+
+== Extra
+If you have already finished RTK or you are working on Core2K simultaneously, you should definitely look into https://ankiweb.net/shared/info/1600796261[Kanji Vocab] an Add-on that links vocab with kanji.
 
 == Script Setup
 If you can't run the `getstories.exe` you can use the uncompiled Python version.
