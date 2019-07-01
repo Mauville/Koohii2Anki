@@ -184,6 +184,6 @@ Tl;dr Anki is better.
 
 
 == Licence
-GPL v3.0
+GPL v3.0 +
 Kanji Colorizer, used under GPL 3.0 terms
 
