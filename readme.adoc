@@ -26,9 +26,8 @@ toc::[]
 * Scripts to migrate everything from Kanji Koohii to Anki
 
 ++++
-<p align="center">
-<img align="center" role="center" width="275px" src="imagesdir/demo7.gif?raw=true"/>
-</p>
+
+<img align="right" width="275px" src="imagesdir/demo7.gif?raw=true"/>
 ++++
 
 == Prework
