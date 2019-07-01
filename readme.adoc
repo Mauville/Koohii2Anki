@@ -14,8 +14,10 @@ ifdef::env-github[]
 :caution-caption: :fire:
 :warning-caption: :warning:
 endif::[]
-Full Kanji Koohii to Anki Migration
 
+++++
+<img align="right" width="275px" src="imagesdir/demo7.gif?raw=true"/>
+++++
 toc::[]
 
 
@@ -25,10 +27,7 @@ toc::[]
 
 * Scripts to migrate everything from Kanji Koohii to Anki
 
-++++
 
-<img align="right" width="275px" src="imagesdir/demo7.gif?raw=true"/>
-++++
 
 == Prework
 
