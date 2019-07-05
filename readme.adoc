@@ -180,7 +180,7 @@ Tl;dr Anki is better.
 * The portable reviewer for KK (Android) is not open source, hard to install and a bit dated. For those of you who don't know, http://slideme.org/application/kanji-ryokucha[Kanji Ryokucha] is an app that allows you to review RTK on the go. It has many advantages over the website such as stroke order and a scratchpad to write. Unfortunately, it is dependent on the internet to get the cards.
 
 
-== Licence
+== License
 AGPL v3.0 +
 Kanji Colorizer, used under GPL 3.0 terms
 
