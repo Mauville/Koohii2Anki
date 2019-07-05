@@ -138,7 +138,7 @@ https://vladsperspective.wordpress.com/2017/03/14/optimize-your-anki-youre-overt
 
 Phew! That's it!  🎉🎉🎉🎉
 
-== Extra
+== Finished RTK?
 If you have already finished RTK or you are working on Core2K simultaneously, you should definitely look into https://ankiweb.net/shared/info/1600796261[Kanji Vocab] an Add-on that links vocab with kanji.
 
 == Script Setup
@@ -181,6 +181,6 @@ Tl;dr Anki is better.
 
 
 == Licence
-GPL v3.0 +
+AGPL v3.0 +
 Kanji Colorizer, used under GPL 3.0 terms
 
