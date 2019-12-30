@@ -34,6 +34,7 @@
 
     $(document).ready(function () {
 
+
         $("#dict").on("click", function () { clickTopBar("#dict") });
         $("#story").on("click", function () { clickTopBar("#story") });
         $("#details").on("click", function () { clickTopBar("#details") });
@@ -42,10 +43,16 @@
     });
 </script>
 
+
+<link rel="stylesheet" href="styles.css">
+
 <div class="innerCard2">
 
     <a href="http://jisho.org/kanji/details/{{Kanji}}" id="keyword">{{keyword}}</a>
 </div>
+    <!-- Blur -->
+    <div id="fade"></div>
+
 <!-- Button Bar -->
 <ul id="buttonbar">
     <li id="details">Details</li>
@@ -116,7 +123,7 @@
 <div id="detailsbox" class="box">
     <table id="detailtable">
         <tr id="heads">
-            <td class="lead">Kun:</td>
+            <td class="lead">Kunyomi:</td>
             <td>
                 <div class="scrollable">
                     {{kunYomi}}
@@ -124,7 +131,7 @@
             </td>
         </tr>
         <tr>
-            <td class="lead" id="lead">On:</td>
+            <td class="lead" id="lead">Onyomi:</td>
             <td>
                 <div class="scrollable">
                     {{onYomi}}
@@ -140,11 +147,11 @@
             <td>{{jouYou}}</td>
         </tr>
         <tr>
-            <td class="lead">JLPT:</td>
+            <td class="lead">JLPT Level:</td>
             <td>{{jlpt}}</td>
         </tr>
         <tr id="botts">
-            <td class="lead">Cpds:</td>
+            <td class="lead">Compounds:</td>
             <td>
                 <p class="details scrollable" id="readexams">{{readingExamples}}</p>
             </td>
