@@ -83,6 +83,11 @@ If you have already finished RTK or you are working on Core2K simultaneously, yo
 === Updating
 I release updates for the card styles with some degree of frequency. Should you find your styles version outdated, just copy the content of the files in the https://github.com/Mauville/Koohii2Anki/tree/2.0.0/cardStyles[cardStyles] directory to the respective fields in the Anki cards.
 
+
+== Finished RTK?
+If you have already finished RTK or you are working on Core2K simultaneously, you should definitely look into https://ankiweb.net/shared/info/1600796261[Kanji Vocab] an Add-on that links vocab with kanji.
+
+== Miscelaneous
 === Card Styles and Edition
 The deck comes with predetermined styles for smartphones so if you have the 6th edition and you'll be reviewing on mobile, skip this part.
 
