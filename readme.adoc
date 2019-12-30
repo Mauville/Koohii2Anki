@@ -33,17 +33,14 @@ toc::[]
 
 .Do you know how to use Anki?
 If not, you can start by watching  https://youtu.be/QS2G-k2hQyg?t=98[this video] on the basics on Anki.  You can also read the https://apps.ankiweb.net/docs/manual.html[manual] if you get lost. +
-This tutorial will run you through the most important stuff so you should learn quite a bit of Anki if you follow it.
 
 
 == Instructions
 
 === Importing Keywords and Stories
 
-. https://apps.ankiweb.net/[Install Anki.]
-. Download the https://www.github.com/Mauville/Koohii2Anki/releases/latest/download/K2A.zip[latest release] of Koohii2Anki.
-. Extract the archive to a location you remember.
-. https://kanji.koohii.com/study/mystories[Download] your stories and keywords from Kanji Koohii. You can do this in menu:Study[My Stories > Export to CSV]
+. Download and extract the https://www.github.com/Mauville/Koohii2Anki/releases/latest/download/K2A.zip[latest release] of Koohii2Anki.
+. https://kanji.koohii.com/study/mystories[Download] your stories and keywords from Kanji Koohii.
 . Save the file to the `{card-import}` directory (it should be named `my_stories.csv`)
 . Run `getstories`.
 .. If you are using Windows, I've provided an exe for simplicity.
@@ -58,10 +55,32 @@ This tutorial will run you through the most important stuff so you should learn 
 [.text-center]
 image::import.png[auto, 350]
 
-. Move `_jquery-3.4.1.min.js` into your https://apps.ankiweb.net/docs/manual.html#files[collection.media] directory
-. You should now have a new deck called Remembering the Kanji in Anki.
+. Move `_jquery-3.4.1.min.js` into your https://apps.ankiweb.net/docs/manual.html#files[collection.media directory]
 
-==== Card Styles and Edition
+You should now have a new deck called Remembering the Kanji in Anki.
+
+
+
+==== Stroke Order and Progress
+. https://kanji.koohii.com/manage/export[Download] your progress from Kanji Koohii. 
+. Download these addons: `1340694622 1947297285`. (https://ankiweb.net/shared/info/1947297285[Source 1] https://ankiweb.net/shared/info/1340694622[Source 2].)
+. When the download has finished, restart Anki
+. Click on menu:Tools[Kanji Colorizer for RTK] to generate stroke order diagrams.
++
+NOTE: If you are using the 4th edition of the book, change the following plugin configuration files to reflect your version. You can do this in menu:Tools[Add-Ons], select the "Import Kanji Koohii Progress" addon and click on config.
++
+. Click on menu:Tools[Import Kanji Koohii Progress] and select the `rtk_flashcards.csv` file you downloaded earlier.
++
+NOTE: Anki can seemingly not respond while executing the plugins. This is normal. Give it some time.
+
+
+Phew! That's it!  🎉🎉🎉🎉
+
+== Finished RTK?
+If you have already finished RTK or you are working on Core2K simultaneously, you should definitely look into https://ankiweb.net/shared/info/1600796261[Kanji Vocab] an Add-on that links vocab with kanji.
+
+== Miscelaneous
+=== Card Styles and Edition
 The deck comes with predetermined styles for smartphones so if you have the 6th edition and you'll be reviewing on mobile, skip this part.
 
 . Hit kbd:[B] and select the Remembering the Kanji deck on the left.
@@ -81,67 +100,7 @@ Decide which device size you'll be using the most (from best to worst support):
 .. If you choose a desktop computer, you should choose a value of around `.3em`
 Experiment with the values to see what works for you
 
-
-==== Stroke Order and Progress
-. Return to the Decks screen in Anki.
-. https://kanji.koohii.com/manage/export[Download] your progress from Kanji Koohii. You can get it from menu:Flashcards[Manage Flashcards > Export Flashcards]
-. Save this file to a place where you remember.
-. Press kbd:[Ctrl+Shift+A] or go into menu:Tools[Add-ons] and click on btn:[Get Add-ons]
-. Copy `1340694622 1947297285` to the `code` field and press btn:[OK]. (This will download https://ankiweb.net/shared/info/1947297285[these] https://ankiweb.net/shared/info/1340694622[addons].)
-. When the download has finished, restart Anki
-. Click on menu:Tools[Kanji Colorizer for RTK] to generate stroke order diagrams.
-+
-NOTE: If you are using the 4th edition of the book, you should change the following plugin configuration files to reflect your version before moving to the next step. You can do this in menu:Tools[Add-Ons], select the "Import Kanji Koohii Progress" addon and click on config.
-+
-. Click on menu:Tools[Import Kanji Koohii Progress] and select the `rtk_flashcards.csv` file you downloaded earlier.
-
-
-NOTE: Anki can seemingly not respond while executing the plugins. This is normal. Give it some time.
-
-
-==== Deck Options
-
-I've been working with this option group for a while and it works for me. Options are by far the most difficult part of Anki to get right so modify them only if you know what you are doing.
-
-. Go to menu:Tools[Preferences > Basic], then set the Learn ahead limit to 2mins
-. In here you can also set if you want to see new cards first, after or mixed in with reviews.
-
-We will finally add an extra set of deck options to optimize learning rates
-
-. On the Decks screen, click on the little cog besides the Remembering the Kanji deck and choose Options.
-. Create a new option group with the following values:
-
-.New Cards
-[horizontal]
-Steps:: 1 10
-New Cards/day:: As many as you want (10 works good)
-Graduating Interval:: 2 days
-Easy Interval:: 2 days
-Starting Ease:: 250%
-
-.Reviews
-[horizontal]
-Maximum reviews/day:: 9999
-Easy bonus:: 100%
-Interval modifier:: 90%
-
-.Lapses
-[horizontal]
-Steps:: 1 20
-New Interval:: 100%
-Minimum Interval:: 2 days
-Leech Threshold:: 6 Lapses
-Leech Action:: Tag Only +
-
-https://vladsperspective.wordpress.com/2017/03/14/optimize-your-anki-youre-overtesting-yourself-on-too-few-cards-make-huge-gains/[Source]
-
-
-Phew! That's it!  🎉🎉🎉🎉
-
-== Finished RTK?
-If you have already finished RTK or you are working on Core2K simultaneously, you should definitely look into https://ankiweb.net/shared/info/1600796261[Kanji Vocab] an Add-on that links vocab with kanji.
-
-== Script Setup
+=== Script Setup
 If you can't run the `getstories.exe` you can use the uncompiled Python version.
 
 . https://www.python.org/downloads/[Install Python 3]
@@ -168,7 +127,7 @@ NOTE: If on any of these commands you get  `Python 2.x`, you should look into ge
     python getstories.py
 
 
-== Why?
+=== Why?
 Tl;dr Anki is better. 
 
 * With Koohii Forums closing down on 2019, we got reminded that the Kanji Koohii depends on a man and a few contributors. If someday the site gets nuked, all the reviewing system and personal progress will be deleted too.
@@ -180,7 +139,7 @@ Tl;dr Anki is better.
 * The portable reviewer for KK (Android) is not open source, hard to install and a bit dated. For those of you who don't know, http://slideme.org/application/kanji-ryokucha[Kanji Ryokucha] is an app that allows you to review RTK on the go. It has many advantages over the website such as stroke order and a scratchpad to write. Unfortunately, it is dependent on the internet to get the cards.
 
 
-== License
+=== License
 AGPL v3.0 +
 Kanji Colorizer, used under GPL 3.0 terms
 

@@ -1,7 +1,81 @@
-/* Mobile styling done using AnkiDroid Card Style Previewer. */
+﻿/* Mobile styling done using AnkiDroid Card Style Previewer. */
 /* https://github.com/Mauville/AnkiDroid-Card-Preview */
 
-/* http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126 License: none (public domain) */ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, u, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; } /* HTML5 display-role reset for older browsers */ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; } body { line-height: 1; } ol, ul { list-style: none; } blockquote, q { quotes: none; } blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; } table { border-collapse: collapse; border-spacing: 0; } /* change body em to adjust to phone size */ /* change #num rem to adjust size */
+/* http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126 License: none (public domain) */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+u,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; } /* HTML5 display-role reset for older browsers */ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; } body { line-height: 1; } ol, ul { list-style: none; } blockquote, q { quotes: none; } blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; } table { border-collapse: collapse; border-spacing: 0; } /* change body em to adjust to phone size */ /* change #num rem to adjust size */
 
 @media screen and (min-width: 768px) {
 
@@ -52,6 +126,7 @@ left: 50%;
 transform: translateX(-50%);
 width: 87%;
 height: 86%;
+border-radius: 10px;
 margin: 0 auto;
 padding: .5rem 1.6em;
          z-index: 0;
@@ -71,7 +146,7 @@ color: #999999;
     text-decoration: none;
 color: white;
        font-size: 4.8em;
-padding: 0.3em 0.7em;
+    padding: 0.3em 0em .3em, 0.7em;
 }
 
 #kanji {
@@ -87,7 +162,7 @@ filter: invert(100%);
 margin: 0 auto;
         margin-top: -50vh;
 padding: 3em;
-height: 33em;
+height: 37em;
 }
 
 .bottom-line {
@@ -164,7 +239,8 @@ margin: 0 auto;
         background-color: #262626;
 padding: 1em 1.2em;
          border-radius: 18px;
-         max-height: 40%;
+    overflow: scroll;    
+    max-height: 40%;
          box-shadow: 0px 18px 38px -1px #141414;
 transition: display 5s ease-in;
 }
