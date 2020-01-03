@@ -27,7 +27,7 @@ toc::[]
 
 * Scripts to migrate everything from Kanji Koohii to Anki
 
-
+IMPORTANT: I just discovered that you can toggle the Story, Details and Dict buttons without exiting the Whiteboard mode! You just need to tap and hold one finger anywhere in the screen while pressing the desired button with another. 
 
 == Prework
 
