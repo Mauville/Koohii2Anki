@@ -44,22 +44,20 @@ If not, you can start by watching  https://youtu.be/QS2G-k2hQyg?t=98[this video]
 . Save the file to the `{card-import}` directory (it should be named `my_stories.csv`)
 . Run `getstories`.
 .. If you are using Windows, I've provided an exe for simplicity.
-.. If you are using Linux or MacOS or you are comfortable with a terminal, you should follow the <<_script_setup, extra steps>>
+.. If you are using Linux or MacOS or you are comfortable with a terminal, you should follow the <<script-setup, extra steps>>
 
 === Styles, Stroke Order, Progress
 . Import `SkeletonDeck.apkg` into Anki.
 . Delete the demo card that comes included with it.
 . Import `{output}` into Anki.
 .. The import dialogue should look like this.
-
++
 [.text-center]
 image::import.png[auto, 350]
-
-. Move `_jquery-3.4.1.min.js` into your https://apps.ankiweb.net/docs/manual.html#files[collection.media directory]
++
+. Move `_jquery-3.4.1.min.js` into your https://docs.ankiweb.net/#/files[collection.media directory]
 
 You should now have a new deck called Remembering the Kanji in Anki.
-
-
 
 ==== Stroke Order and Progress
 . https://kanji.koohii.com/manage/export[Download] your progress from Kanji Koohii. 
@@ -78,8 +76,9 @@ Phew! That's it!  🎉🎉🎉🎉
 
 == Finished RTK?
 If you have already finished RTK or you are working on Core2K simultaneously, you should definitely look into https://ankiweb.net/shared/info/1600796261[Kanji Vocab] an Add-on that links vocab with kanji.
+This deck supports the default fields of the add-on, so you should just run it normally and the related vocab will appear formatted.
 
-== Miscelaneous
+== Miscellaneous
 === Updating
 I release updates for the card styles with some degree of frequency. Should you find your styles version outdated, just copy the content of the files in the https://github.com/Mauville/Koohii2Anki/tree/2.0.0/cardStyles[cardStyles] directory to the respective fields in the Anki cards.
 

@@ -75,7 +75,43 @@ menu,
 nav,
 output,
 ruby,
-section,summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; } /* HTML5 display-role reset for older browsers */ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; } body { line-height: 1; } ol, ul { list-style: none; } blockquote, q { quotes: none; } blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; } table { border-collapse: collapse; border-spacing: 0; } /* change body em to adjust to phone size */ /* change #num rem to adjust size */
+section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* change body em to adjust to phone size */ /* change #num rem to adjust size */
 
 @media screen and (min-width: 768px) {
 
@@ -92,7 +128,7 @@ body {
     /********************/
 
     font-family: Arial, Helvetica, sans-serif;
-color: white;
+    color: white;
 }
 
 body.night_mode {
@@ -100,85 +136,97 @@ body.night_mode {
 }
 
 .innerCard {
-display: flex;
-         flex-direction: column;
-         justify-content: space-between;
-position: absolute;
-          background-color: #262626;
-bottom: 3.5em;
-left: 50%;
-transform: translateX(-50%);
-width: 87%;
-height: 86%;
-margin: 0 auto;
-padding: .5rem 1.6em;
-         z-index: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    background-color: #262626;
+    bottom: 3.5em;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 87%;
+    height: 86%;
+    margin: 0 auto;
+    padding: .5rem 1.6em;
+    z-index: 0;
 }
 
 .innerCard2 {
-display: flex;
-         flex-direction: column;
-         justify-content: space-between;
-position: absolute;
-          background-color: #262626;
-bottom: 3.5em;
-left: 50%;
-transform: translateX(-50%);
-width: 87%;
-height: 86%;
-border-radius: 10px;
-margin: 0 auto;
-padding: .5rem 1.6em;
-         z-index: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    background-color: #262626;
+    bottom: 3.5em;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 87%;
+    height: 86%;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: .5rem 1.6em;
+    z-index: 0;
 }
 
-#bottom-line{
+#bottom-line {
     font-size: 4em;
-position: absolute;
-top: 1em;
-left: 50%;
-transform: translateX(-50%);
-color: #999999;
+    position: absolute;
+    top: 1em;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #999999;
 
 }
 
 #keyword {
     text-decoration: none;
-color: white;
-       font-size: 4.8em;
+    color: white;
+    font-size: 4.8em;
     padding: 0.3em 0em .3em 0.7em;
 }
 
 #kanji {
     margin-top: -50vh;
     font-size: 33em;
-    font-family: "Hiragino Mincho Pro", "ヒラギノ明朝 Pro W3", "ＭＳ 明朝","ＭＳ Ｐ明朝",serif !important;
+    font-family: "Hiragino Mincho Pro", "ヒラギノ明朝 Pro W3", "ＭＳ 明朝", "ＭＳ Ｐ明朝", serif !important;
     align-self: center;
 }
 
-#strokes{
-display: none;
-filter: invert(100%);
-margin: 0 auto;
-        margin-top: -50vh;
-padding: 3em;
-height: 37em;
+#strokes {
+    display: none;
+    filter: invert(100%);
+    margin: 0 auto;
+    margin-top: -50vh;
+    padding: 3em;
+    height: 37em;
 }
 
 .bottom-line {
-color: #999999;
-margin: 0;
-        padding-top: 20px;
-        text-align: center;
-        font-size: 2.7vh;
+    color: #999999;
+    margin: 0;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 2.7vh;
 }
 
-#bottombar li {
-color: #999999;
-display: inline;
-         font-size: 3.2em;
-         padding-bottom: .5em;
+#bottombar {
+    color: #999999;
+    display: flex;
+    font-size: 3.2em;
+    padding-bottom: .5em;
+    border: red 5px;
+    justify-content: space-between;
+    padding: 0 1em;
+    align-items: flex-end;
+    margin-bottom: 1.5em;
 }
+
+/*#bottombar li {*/
+/*    color: #999999;*/
+/*    display: inline;*/
+/*    font-size: 3.2em;*/
+/*    padding-bottom: .5em;*/
+/*}*/
 
 #bottombar li #num {
     font-size: .7em;
@@ -186,149 +234,149 @@ display: inline;
 
 #bottombar li:nth-child(1) {
     font-family: serif;
-    padding-left: 1em;
+    /*padding-left: 1em;*/
 }
 
-#bottombar li:nth-child(2) {
-float: right;
-       padding-right: 1em;
+#bottombar li:last-child {
+    /*float: right;*/
+    /*padding-right: 1em;*/
 }
 
 /* Button Bar */
 
 #buttonbar {
-display: flex;
-         font-size: 2.6em;
-         text-align: center;
-         justify-content: space-between;
-position: absolute;
-top: 0;
-width: 100%;
-left: 50%;
-transform: translateX(-50%);
-           z-index: 999;
-           background-color: #000000;
+    display: flex;
+    font-size: 2.6em;
+    text-align: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    background-color: #000000;
 }
 
 #buttonbar li {
     font-size: .92em;
-width: 100%;
-padding: 1.5em 1em;
-border: solid 0.6px #8f8d8d8f;
+    width: 100%;
+    padding: 1.5em 1em;
+    border: solid 0.6px #8f8d8d8f;
 }
 
 
-#details{
-color: #ff99ff;
+#details {
+    color: #ff99ff;
 }
 
-#story{
-color: #FFEE58;
+#story {
+    color: #FFEE58;
 }
 
-#dict{
-color: #00BCD4;
+#dict {
+    color: #00BCD4;
 }
 
 .box {
-display: none;
-position: relative;
-          font-size: 4.5em;
-width: 81%;
-margin: 0 auto;
-        background-color: #262626;
-padding: 1em 1.2em;
-         border-radius: 18px;
-    overflow: scroll;    
+    display: none;
+    position: relative;
+    font-size: 4.5em;
+    width: 81%;
+    margin: 0 auto;
+    background-color: #262626;
+    padding: 1em 1.2em;
+    border-radius: 18px;
+    overflow: scroll;
     max-height: 40%;
-         box-shadow: 0px 18px 38px -1px #141414;
-transition: display 5s ease-in;
+    box-shadow: 0px 18px 38px -1px #141414;
+    transition: display 5s ease-in;
 }
 
 #storywrapper {
-display: none;
-position: relative;
-          z-index: 7;
+    display: none;
+    position: relative;
+    z-index: 7;
 }
 
 #detailsbox {
-width: 75%;
-       font-size: 4.0em;
-       text-align: left;
-       max-height: 70%;
-       z-index: 500;
+    width: 75%;
+    font-size: 4.0em;
+    text-align: left;
+    max-height: 70%;
+    z-index: 500;
 }
 
 #detailsbox td {
-padding: .9em 0.4em;
+    padding: .9em 0.4em;
 }
 
 #detailsbox .lead {
-color: #999999;
-       padding-right: 0;
+    color: #999999;
+    padding-right: 0;
 }
 
 .scrollable {
     max-height: 4em;
-overflow: auto;
+    overflow: auto;
 }
 
 #dictbox {
     line-height: 1.75;
-overflow: auto;
-          font-size: 3.8em;
-          z-index: 6;
+    overflow: auto;
+    font-size: 3.8em;
+    z-index: 6;
 }
 
 #storybox {
-display: flex;
-         flex-direction: column;
-         justify-content: flex-start;
-         max-height: 80%;
-         margin-top: 2.5em;
-         width: 78%;
-         font-size:4em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-height: 80%;
+    margin-top: 2.5em;
+    width: 78%;
+    font-size: 4em;
 }
 
 .story {
-margin: .7em 0;
-padding: 1.0em 0;
-         font-size: .9em;
-         /* border-top: #999999 .5px solid; */
-         border-bottom: #999999 .5px solid;
-         max-height: 30%;
-overflow: auto;
+    margin: .7em 0;
+    padding: 1.0em 0;
+    font-size: .9em;
+    /* border-top: #999999 .5px solid; */
+    border-bottom: #999999 .5px solid;
+    max-height: 30%;
+    overflow: auto;
 }
 
 .story #header {
     font-size: 0.8em;
-color: #999999;
-       margin-bottom: .5em;
+    color: #999999;
+    margin-bottom: .5em;
 }
 
 #storybox #keyword {
     font-size: 1.18em;
-overflow: hidden;
-          text-align: right;
-          margin-bottom: .5em;
+    overflow: hidden;
+    text-align: right;
+    margin-bottom: .5em;
 }
 
 #storybox #keyword span {
-float: left;
-       font-size: 1.1em;
-       font-family: Meiryo, sans-serif;
+    float: left;
+    font-size: 1.1em;
+    font-family: Meiryo, sans-serif;
 }
 
 #primitives summary {
     margin-top: 1em;
     margin-bottom: .3em;
-color: #999999;
-       font-size: .8em;
+    color: #999999;
+    font-size: .8em;
 }
 
 #primitives p {
-margin: 1em;
-        font-size: .7em;
+    margin: 1em;
+    font-size: .7em;
 }
 
 .toggled {
@@ -338,18 +386,18 @@ margin: 1em;
 }
 
 #fade {
-display: none;
-position: absolute;
-top: 0;
-height: 100%;
-width: 99%;
-background: #323232;
-opacity: .95;
-         z-index: 1;
+    display: none;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 99%;
+    background: #323232;
+    opacity: .95;
+    z-index: 1;
 }
 
 .debug {
-display: none;
+    display: none;
 }
 
 .win .japanese {
@@ -366,4 +414,41 @@ display: none;
 
 .mobile .japanese {
     font-family: "Motoya L Cedar", "Motoya L Maru", "DroidSansJapanese", "Hiragino Mincho ProN";
+}
+
+.KanjiVocab {
+    display: flex;
+    flex-direction: column;
+    line-height: .9;
+    max-width: 30%;
+    text-align: center;
+}
+#KanjiVocabFront{
+    line-height: 0.6;
+    max-width: 100%;
+    font-size: 4.5em;
+    width: 100%;
+    padding-bottom: 1em;
+
+}
+.KanjiVocab span{
+    font-size: 2.1rem;
+
+}
+
+
+.kv_kanji_known, .kv_kanji_mature {
+    color: #82d682
+}
+
+.kv_kana_known, .kv_kana_mature {
+    background-color: #ffd765
+}
+
+.kv_confuse {
+    color: #d03a3a
+}
+
+.kv_likely {
+    color: #e9a0e9
 }
