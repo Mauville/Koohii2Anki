@@ -73,6 +73,7 @@ def processCard(nr, kanji, keyword, lastseen, due, box, fails, passes):
                 i = min(150, card.ivl)
                 ivlPenalty = (i ** 2) / 10 - 1.065 * max(0, (i ** 2.26) / 40 - 25 * math.sqrt(i))
                 card.factor = max(2000, card.factor - ivlPenalty)  # If the interval is especially long, make it harder
+            card.factor = int(round(card.factor))
 
             # Card type 
             card.type = 2  # Due
