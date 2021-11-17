@@ -22,10 +22,10 @@ toc::[]
 
 
 == What's in the box?
-* A ready-to-bake deck containing _almost_ all the information you could ever need. footnote:[Due to copyright issues, I cannot provide Heisig's Stories. You'll have to look for them on your own.]
+* A ready-to-bake deck containing _almost_ all the information you could ever need to study Kanji. footnote:[Due to copyright issues, I cannot provide Heisig's Stories. You'll have to look for them on your own.]
 * [red]##Flaring## card design. Inspired by Kanji Koohii, designed with https://github.com/Mauville/AnkiDroid-Card-Preview[AnkiDroid Card Preview]
 
-* Scripts to migrate everything from Kanji Koohii to Anki
+* Scripts to migrate everything from Kanji Koohii to Anki.
 
 IMPORTANT: I just discovered that you can toggle the Story, Details and Dict buttons without exiting the Whiteboard mode! You just need to tap and hold one finger anywhere in the screen while pressing the desired button with another. 
 
@@ -74,19 +74,12 @@ NOTE: Anki can seemingly not respond while executing the plugins. This is normal
 
 Phew! That's it!  🎉🎉🎉🎉
 
-== Finished RTK?
-If you have already finished RTK or you are working on Core2K simultaneously, you should definitely look into https://ankiweb.net/shared/info/1600796261[Kanji Vocab] an Add-on that links vocab with kanji.
-This deck supports the default fields of the add-on, so you should just run it normally and the related vocab will appear formatted.
 
 == Miscellaneous
-=== Updating
-I release updates for the card styles with some degree of frequency. Should you find your styles version outdated, just copy the content of the files in the https://github.com/Mauville/Koohii2Anki/tree/2.0.0/cardStyles[cardStyles] directory to the respective fields in the Anki cards.
 
-
-== Finished RTK?
+=== Finished RTK?
 If you have already finished RTK or you are working on Core2K simultaneously, you should definitely look into https://ankiweb.net/shared/info/1600796261[Kanji Vocab] an Add-on that links vocab with kanji.
 
-== Miscelaneous
 === Card Styles and Edition
 The deck comes with predetermined styles for smartphones so if you have the 6th edition and you'll be reviewing on mobile, skip this part.
 
