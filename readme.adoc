@@ -55,7 +55,7 @@ If not, you can start by watching  https://youtu.be/QS2G-k2hQyg?t=98[this video]
 [.text-center]
 image::import.png[auto, 350]
 +
-. Move `_jquery-3.4.1.min.js` into your https://docs.ankiweb.net/files.html[collection.media directory]
+. Move `_jquery-3.7.1.min.js` into your https://docs.ankiweb.net/files.html[collection.media directory]
 
 You should now have a new deck called Remembering the Kanji in Anki.
 
