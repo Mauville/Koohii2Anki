@@ -32,7 +32,7 @@ IMPORTANT: I just discovered that you can toggle the Story, Details and Dict but
 == Prework
 
 .Do you know how to use Anki?
-If not, you can start by watching  https://youtu.be/QS2G-k2hQyg?t=98[this video] on the basics on Anki.  You can also read the https://apps.ankiweb.net/docs/manual.html[manual] if you get lost. +
+If not, you can start by watching  https://youtu.be/QS2G-k2hQyg?t=98[this video] on the basics on Anki.  You can also read the https://docs.ankiweb.net/#/[manual] if you get lost. +
 
 
 == Instructions
@@ -55,7 +55,7 @@ If not, you can start by watching  https://youtu.be/QS2G-k2hQyg?t=98[this video]
 [.text-center]
 image::import.png[auto, 350]
 +
-. Move `_jquery-3.4.1.min.js` into your https://docs.ankiweb.net/#/files[collection.media directory]
+. Move `_jquery-3.4.1.min.js` into your https://docs.ankiweb.net/files.html[collection.media directory]
 
 You should now have a new deck called Remembering the Kanji in Anki.
 
